@@ -44,7 +44,7 @@ public class ConsoleUtils {
 
     // print prompt
     public void printPrompt() {
-        System.out.print(ANSI_RED + "> " + ANSI_RESET);
+        System.out.print(ANSI_GREEN + "> " + ANSI_RESET);
     }
 
     // print emily msg
