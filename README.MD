@@ -22,6 +22,6 @@ Emily is artificial intelligence conceived as a chatbot
 
 ## Dependencies
 This project requires Java 17.
-* NAME
-	* Version: **VERSION**
-	* [Website](LINK)
+* Junit
+	* Version: **4.11**
+	* [Website](https://junit.org/junit5/)
