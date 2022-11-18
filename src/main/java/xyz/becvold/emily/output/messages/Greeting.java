@@ -53,6 +53,10 @@ public class Greeting {
             return true;
         } else if (input.startsWith("servus")) {
             return true;
+        } else if (input.startsWith("cc")) {
+            return true;
+        } else if (input.startsWith("cs")) {
+            return true;
         }  else {
             return false;
         }
@@ -148,7 +152,13 @@ public class Greeting {
         } else if (input.startsWith("servus")) {
             console.emilyLog("No servus člověče!");
 
-        }  else {
+        } else if (input.startsWith("cc")) {
+            console.emilyLog("cs no...");
+
+        } else if (input.startsWith("cs")) {
+            console.emilyLog("cc");
+
+        } else {
             console.emilyLog("Ahoj");
         }
     }
