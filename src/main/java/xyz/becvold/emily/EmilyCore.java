@@ -1,6 +1,7 @@
 package xyz.becvold.emily;
 
 import xyz.becvold.emily.output.OutputProcesor;
+import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.console.ConsoleUtils;
 import java.util.Scanner;
 
@@ -30,10 +31,22 @@ public class EmilyCore {
         } else {
 
             // process output
-            procesor.outputProces(input);
+            procesor.outputProces(validateInput(input));
         }
 
         // reinit this function
         init();
+    }
+
+    public String validateInput(String input) {
+
+        // replace special chars
+        input = StringUtils.unaccent(input);
+
+        // replace all to lower case
+        input = input.toLowerCase();
+
+        // return valid input
+        return input;
     }
 }

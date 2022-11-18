@@ -6,7 +6,7 @@ Emily is artificial intelligence conceived as a chatbot
 - [X] Create basic Structure
 - [ ] Crate database structure
 - [X] CLI Chat system
-- [ ] Input validation system
+- [X] Input validation system
 - [X] Input recognition system
 - [ ] Own database of basic phrases
 - [ ] Learning system (According to unintelligible input)
