@@ -51,6 +51,8 @@ public class Greeting {
             return true;
         } else if (input.startsWith("hallo")) {
             return true;
+        } else if (input.startsWith("servus")) {
+            return true;
         }  else {
             return false;
         }
@@ -142,6 +144,9 @@ public class Greeting {
 
         } else if (input.startsWith("hallo")) {
             console.emilyLog("Hallo!");
+
+        } else if (input.startsWith("servus")) {
+            console.emilyLog("No servus člověče!");
 
         }  else {
             console.emilyLog("Ahoj");
