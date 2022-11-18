@@ -38,6 +38,7 @@ public class EmilyCore {
         init();
     }
 
+    // input validat function
     public String validateInput(String input) {
 
         // replace special chars
