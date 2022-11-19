@@ -1,8 +1,8 @@
 package xyz.becvold.emily;
 
-import xyz.becvold.emily.output.OutputProcesor;
+import xyz.becvold.emily.outputs.Greeting;
 import xyz.becvold.emily.utils.StringUtils;
-import xyz.becvold.emily.utils.console.ConsoleUtils;
+import xyz.becvold.emily.utils.ConsoleUtils;
 import java.util.Scanner;
 
 /**
@@ -14,7 +14,6 @@ public class EmilyCore {
     // objects initiate
     public ConsoleUtils console = new ConsoleUtils();
     public Scanner scanner = new Scanner(System.in);
-    public OutputProcesor procesor = new OutputProcesor();
 
     // core function
     public void init() throws InterruptedException {
@@ -30,24 +29,23 @@ public class EmilyCore {
             console.emilyLog("Cože? Tvá zpráva je prázdná!");
         } else {
 
-            // process output
-            procesor.outputProces(validateInput(input));
+            // validate input
+            input = StringUtils.validateInput(input);
+
+            // process output ///////////////////////////////////////////////////////////
+
+            // greeting
+            if (Greeting.isGreeting(input)) {
+                Greeting.getOutput(input);
+
+            } else {
+                // not found input msg
+                console.emilyLog("Omlouvám se ale nerozuměla jsem vám :(");
+            }
+            /////////////////////////////////////////////////////////////////////////////
         }
 
         // reinit this function
         init();
-    }
-
-    // input validat function
-    public String validateInput(String input) {
-
-        // replace special chars
-        input = StringUtils.unaccent(input);
-
-        // replace all to lower case
-        input = input.toLowerCase();
-
-        // return valid input
-        return input;
     }
 }

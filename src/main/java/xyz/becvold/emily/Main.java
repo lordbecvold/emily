@@ -1,6 +1,6 @@
 package xyz.becvold.emily;
 
-import xyz.becvold.emily.utils.console.ConsoleUtils;
+import xyz.becvold.emily.utils.ConsoleUtils;
 
 /**
  * @author Lukáš Bečvář on 17.11.22

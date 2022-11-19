@@ -1,7 +1,7 @@
-package xyz.becvold.emily.output.messages;
+package xyz.becvold.emily.outputs;
 
 import xyz.becvold.emily.utils.TimeUtils;
-import xyz.becvold.emily.utils.console.ConsoleUtils;
+import xyz.becvold.emily.utils.ConsoleUtils;
 import java.util.Random;
 
 /**
@@ -90,51 +90,51 @@ public class Greeting {
 
         } else if (input.startsWith("dobry den")) {
             if (!TimeUtils.isNightTime() || TimeUtils.isEveningTime()) {
-                console.emilyLog("Dobrý den přeji.");
+                console.emilyLog("Dobrý den, přeji.");
             } else {
-                console.emilyLog("Není den ale dobrý i vám.");
+                console.emilyLog("Není den, ale dobrý i vám.");
             }
 
         } else if (input.startsWith("dobry vecer")) {
             if (TimeUtils.isEveningTime()) {
                 console.emilyLog("Dobrý večer i vám.");
             } else {
-                console.emilyLog("Není večer ale dobrý i vám.");
+                console.emilyLog("Není večer, ale dobrý i vám.");
             }
 
         } else if (input.startsWith("dobre odpoledne")) {
             if (TimeUtils.isAafternoonTime()) {
                 console.emilyLog("Dobré odpoledne i vám.");
             } else {
-                console.emilyLog("Není odpoledne ale dobré i vám.");
+                console.emilyLog("Není odpoledne, ale dobré i vám.");
             }
 
         } else if (input.startsWith("dobre rano")) {
             if (TimeUtils.isMorningTime()) {
                 console.emilyLog("Dobré ráno i vám.");
             } else {
-                console.emilyLog("Jako není ráno ale dobré i vám.");
+                console.emilyLog("Jako není ráno, ale dobré i vám.");
             }
 
         } else if (input.startsWith("dobry podvecer")) {
             if (TimeUtils.isEarlyEveningTime()) {
                 console.emilyLog("Dobrý podvečer i vám.");
             } else {
-                console.emilyLog("No, není sice podvečer ale dobrý i vám.");
+                console.emilyLog("No... není sice podvečer, ale dobrý i vám.");
             }
 
         } else if (input.startsWith("dobre poledne")) {
             if (TimeUtils.isNoonTime()) {
                 console.emilyLog("Dobré poledne i vám.");
             } else {
-                console.emilyLog("No, není sice poledne ale dobré i vám.");
+                console.emilyLog("No.. není sice poledne, ale dobré i vám.");
             }
 
         } else if (input.startsWith("dobre dopoledne")) {
             if (TimeUtils.isAfterMorningTime()) {
-                console.emilyLog("Dobré dopoledne přeji.");
+                console.emilyLog("Dobré dopoledne, přeji.");
             } else {
-                console.emilyLog("Sice není dopoledne ale dobré i vám.");
+                console.emilyLog("Sice není dopoledne, ale dobré i vám.");
             }
 
         } else if (input.startsWith("hello")) {

@@ -1,4 +1,4 @@
-package xyz.becvold.emily.utils.console;
+package xyz.becvold.emily.utils;
 
 /**
  * @author Lukáš Bečvář on 17.11.22

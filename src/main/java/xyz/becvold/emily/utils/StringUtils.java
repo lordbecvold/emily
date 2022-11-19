@@ -12,4 +12,17 @@ public class StringUtils {
     public static String unaccent(String src) {
         return Normalizer.normalize(src, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
     }
+
+    // input validate function
+    public static String validateInput(String input) {
+
+        // replace special chars
+        input = StringUtils.unaccent(input);
+
+        // replace all to lower case
+        input = input.toLowerCase();
+
+        // return valid input
+        return input;
+    }
 }
