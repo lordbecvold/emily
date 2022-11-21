@@ -1,5 +1,6 @@
 package xyz.becvold.emily;
 
+import xyz.becvold.emily.functions.messages.WelcomeMessage;
 import xyz.becvold.emily.utils.ConsoleUtils;
 
 /**
@@ -11,6 +12,7 @@ public class Main {
     // objects initiate
     public static ConsoleUtils console = new ConsoleUtils();
     public static EmilyCore core = new EmilyCore();
+    public static WelcomeMessage welcomeMessage = new WelcomeMessage();
 
     // main app initiate
     public static void main(String[] args) throws InterruptedException {
@@ -25,7 +27,7 @@ public class Main {
         console.printSpacer();
 
         // print welcome msg function
-        console.emilyLog("Ahoj, jmenuji se emily a všechny mé systémy jsou připraveny!");
+        welcomeMessage.printWelcomeMessage();
 
         // init app core
         core.init();

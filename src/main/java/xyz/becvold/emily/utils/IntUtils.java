@@ -6,7 +6,8 @@ package xyz.becvold.emily.utils;
  */
 public class IntUtils {
 
-    public int randomInt(int max, int min) {
+    // generate random number [int input: minimal int & maximal int]
+    public int randomInt(int min, int max) {
         return min + (int)(Math.random() * ((max - min) + 1));
     }
 }

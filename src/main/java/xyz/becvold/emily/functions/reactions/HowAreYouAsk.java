@@ -77,13 +77,13 @@ public class HowAreYouAsk {
         } else if (inputAsk.contains("spatne") || inputAsk.contains("nicmoc") || inputAsk.contains("napicu") || inputAsk.contains("nahovno") || inputAsk.contains("debilne") || inputAsk.contains("nakokot")) {
 
             // generate random ask
-            if (intUtils.randomInt(0,3) == 0) {
+            if (intUtils.randomInt(0, 3) == 0) {
                 console.emilyLog("Jak je to možné?");
-            } else if (intUtils.randomInt(0,3) == 1) {
+            } else if (intUtils.randomInt(0, 3) == 1) {
                 console.emilyLog("Jak to?");
-            } else if (intUtils.randomInt(0,3) == 2) {
+            } else if (intUtils.randomInt(0, 3) == 2) {
                 console.emilyLog("Proč?");
-            } else if (intUtils.randomInt(0,3) == 3) {
+            } else if (intUtils.randomInt(0, 3) == 3) {
                 console.emilyLog("Co se stalo?");
             } else {
                 console.emilyLog("Jak je to možné?");
