@@ -10,6 +10,7 @@ import xyz.becvold.emily.utils.StringUtils;
 public class ValidatorTest {
 
     public EmilyCore core = new EmilyCore();
+    public StringUtils stringUtils = new StringUtils();
 
     @Test
     public void unaccentTest() {
@@ -19,7 +20,7 @@ public class ValidatorTest {
 
     @Test
     public void inputValidateTest() {
-        String input = core.validateInput("ŠĚŘÍK");
+        String input = stringUtils.validateInput("ŠĚŘÍK");
         Assert.assertEquals("serik", input);
     }
 }

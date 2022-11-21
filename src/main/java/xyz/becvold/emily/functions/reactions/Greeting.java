@@ -1,4 +1,4 @@
-package xyz.becvold.emily.outputs;
+package xyz.becvold.emily.functions.reactions;
 
 import xyz.becvold.emily.utils.TimeUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
@@ -11,10 +11,10 @@ import java.util.Random;
 public class Greeting {
 
     // init objects
-    public static ConsoleUtils console = new ConsoleUtils();
+    public ConsoleUtils console = new ConsoleUtils();
 
     // check if meessage is greeting
-    public static boolean isGreeting(String input) {
+    public boolean isGreeting(String input) {
         if (input.startsWith("ahoj")) {
             return true;
         } else if (input.startsWith("cus")) {
@@ -63,7 +63,7 @@ public class Greeting {
     }
 
     // Return valid output
-    public static void getOutput(String input) {
+    public void getOutput(String input) {
         if (input.startsWith("ahoj")) {
             console.emilyLog(getRandomGreet());
 

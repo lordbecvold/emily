@@ -1,6 +1,6 @@
 package xyz.becvold.emily;
 
-import xyz.becvold.emily.outputs.Greeting;
+import xyz.becvold.emily.functions.reactions.Greeting;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
 import java.util.Scanner;
@@ -11,9 +11,12 @@ import java.util.Scanner;
  */
 public class EmilyCore {
 
-    // objects initiate
+    // instances initiate
     public ConsoleUtils console = new ConsoleUtils();
     public Scanner scanner = new Scanner(System.in);
+
+    // instances of functions
+    public Greeting greeting = new Greeting();
 
     // core function
     public void init() throws InterruptedException {
@@ -32,11 +35,11 @@ public class EmilyCore {
             // validate input
             input = StringUtils.validateInput(input);
 
-            // process output ///////////////////////////////////////////////////////////
+            // process reaction /////////////////////////////////////////////////////////
 
             // greeting
-            if (Greeting.isGreeting(input)) {
-                Greeting.getOutput(input);
+            if (greeting.isGreeting(input)) {
+                greeting.getOutput(input);
 
             } else {
                 // not found input msg

@@ -24,6 +24,9 @@ public class Main {
         // print spacer
         console.printSpacer();
 
+        // print welcome msg function
+        console.emilyLog("Ahoj, jmenuji se emily a všechny mé systémy jsou připraveny!");
+
         // init app core
         core.init();
     }

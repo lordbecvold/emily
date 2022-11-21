@@ -44,7 +44,6 @@ public class TimeUtils {
         }
     }
 
-
     // check of time is noon
     public static boolean isNoonTime() {
         if (getTime() == 12) {

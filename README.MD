@@ -10,6 +10,9 @@ Emily is artificial intelligence conceived as a chatbot
 - [X] Input recognition system
 - [ ] Own database of basic phrases
 - [ ] Calculator
+- [ ] Time check (What time is it?) + write part of the day
+- [ ] What day it is? reaction
+- [ ] Who you are? reaction
 - [ ] Learning system (According to unintelligible input)
 - [ ] Self-preservation system (Anti-removal, shutdown)
 - [ ] Language recognition
