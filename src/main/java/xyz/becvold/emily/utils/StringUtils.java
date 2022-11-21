@@ -9,18 +9,21 @@ import java.text.Normalizer;
 public class StringUtils {
 
     // remove special characters form string
-    public static String unaccent(String src) {
+    public String unaccent(String src) {
         return Normalizer.normalize(src, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
     }
 
     // input validate function
-    public static String validateInput(String input) {
+    public String validateInput(String input) {
 
         // replace special chars
-        input = StringUtils.unaccent(input);
+        input = unaccent(input);
 
         // replace all to lower case
         input = input.toLowerCase();
+
+        // remove comma
+        input = input.replaceAll(",", "");
 
         // return valid input
         return input;

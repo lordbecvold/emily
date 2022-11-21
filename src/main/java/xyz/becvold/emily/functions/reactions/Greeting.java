@@ -15,7 +15,7 @@ public class Greeting {
 
     // check if meessage is greeting
     public boolean isGreeting(String input) {
-        if (input.startsWith("ahoj")) {
+        if (input.startsWith("ahoj") && !input.startsWith("ahoj jak se mas") && !input.startsWith("ahoj jak je")) {
             return true;
         } else if (input.startsWith("cus")) {
             return true;

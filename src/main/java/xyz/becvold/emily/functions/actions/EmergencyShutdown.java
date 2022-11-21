@@ -24,7 +24,7 @@ public class EmergencyShutdown {
 
     // shutdown function
     public void emergencyShutdown() {
-        console.emilyLog("Byla spuštěna pojistka vypnutí! Vypínám se... :(");
+        console.emilyLog("\u001B[33mByla spuštěna pojistka vypnutí! Vypínám se... :(");
         systemUtils.appShutdown(0);
     }
 }

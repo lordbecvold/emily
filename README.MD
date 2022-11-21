@@ -4,7 +4,7 @@ Emily is artificial intelligence conceived as a chatbot
 
 ## Dev plan
 - [X] Create basic Structure
-- [ ] Crate database structure
+- [ ] Create database structure
 - [X] CLI Chat system
 - [X] Input validation system
 - [X] Input recognition system
@@ -12,7 +12,7 @@ Emily is artificial intelligence conceived as a chatbot
 - [ ] Calculator
 - [ ] Time check (What time is it?) + write part of the day
 - [ ] What day it is? reaction
-- [ ] Who you are? reaction
+- [X] Who you are? reaction
 - [ ] Learning system (According to unintelligible input)
 - [ ] Self-preservation system (Anti-removal, shutdown)
 - [ ] Language recognition

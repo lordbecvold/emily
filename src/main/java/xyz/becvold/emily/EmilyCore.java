@@ -2,6 +2,7 @@ package xyz.becvold.emily;
 
 import xyz.becvold.emily.functions.actions.EmergencyShutdown;
 import xyz.becvold.emily.functions.reactions.Greeting;
+import xyz.becvold.emily.functions.reactions.HowAreYouAsk;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
 import java.util.Scanner;
@@ -19,6 +20,8 @@ public class EmilyCore {
     // instances of functions
     public Greeting greeting = new Greeting();
     public EmergencyShutdown emergencyShutdown = new EmergencyShutdown();
+    public HowAreYouAsk howAreYouAsk = new HowAreYouAsk();
+    public StringUtils stringUtils = new StringUtils();
 
     // core function
     public void init() throws InterruptedException {
@@ -35,7 +38,7 @@ public class EmilyCore {
         } else {
 
             // validate input
-            input = StringUtils.validateInput(input);
+            input = stringUtils.validateInput(input);
 
             // process reaction /////////////////////////////////////////////////////////
 
@@ -47,8 +50,14 @@ public class EmilyCore {
             // greeting
             else if (greeting.isGreeting(input)) {
                 greeting.getOutput(input);
+            }
 
-            } else {
+            // how are you ask
+            else if (howAreYouAsk.isHowAreYou(input)) {
+                howAreYouAsk.answerAndAsk(input);
+
+
+        } else {
                 // not found input msg
                 console.emilyLog("Omlouvám se ale nerozuměla jsem vám :(");
             }
