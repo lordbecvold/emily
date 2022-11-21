@@ -34,7 +34,11 @@ public class HowAreYouAsk {
             return true;
         } else if (input.startsWith("ahoj jak se mas")) {
             return true;
-        } else return input.startsWith("ahoj jak je");
+        } else if (input.startsWith("ahoj jak je")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // Return output
@@ -44,12 +48,16 @@ public class HowAreYouAsk {
         if (usages > 3) {
 
             // print overloaded message
-            if (usages == 10) { // 10 usages (funny message)
-                console.emilyLog("Nebudu se opakovat wtf???");
-            } else if (usages == 100) { // 100 usages (funny message)
-                console.emilyLog("Tak tobě mrdá, kámo :)");
+            if (input.startsWith("how are you")) {
+                console.emilyLog("We already said that!");
             } else {
-                console.emilyLog("To už jsme si řekli!");
+                if (usages == 10) { // 10 usages (funny message)
+                    console.emilyLog("Nebudu se opakovat wtf???");
+                } else if (usages == 100) { // 100 usages (funny message)
+                    console.emilyLog("Tak tobě mrdá, kámo :)");
+                } else {
+                    console.emilyLog("To už jsme si řekli!");
+                }
             }
 
         } else {

@@ -73,32 +73,40 @@ public class Greeting {
         // check if usages is overloaded
         if (usages > 5) {
 
-            // if usage is 100 (funny message)
-            if (usages == 100) {
-                console.emilyLog("Tak ti jsi přijebanej degeš :)");
-            } else if (usages == 10) {
-                console.emilyLog("A dál?");
-            } else if (usages == 11) {
-                console.emilyLog("A dáál?");
-            } else if (usages == 12) {
-                console.emilyLog("A dááál?");
-            } else if (usages == 13) {
-                console.emilyLog("A dáááál?");
-            } else if (usages == 14) {
-                console.emilyLog("Kámo tak už ale wtf???");
+            if (input.startsWith("hello") || input.startsWith("hi")) {
+                console.emilyLog("We will not repeat ourselves again!");
+            } else if (input.startsWith("hallo") || input.startsWith("guten tag")) {
+                console.emilyLog("Wir werden uns nicht noch einmal wiederholen!");
             } else {
-                // generate random number in range
-                int randomInt = intUtils.randomInt(0, 3);
 
-                // print random overloaded messages
-                if (randomInt == 0) {
-                    console.emilyLog("Sorry, ale nebudu tě už znovu zdravit.");
-                } else if (randomInt == 1) {
-                    console.emilyLog("Nebudeme se furt opakovat!");
-                } else if (randomInt == 2) {
-                    console.emilyLog("hele neříkej to furt dokola.");
+
+                // if usage is 100 (funny message)
+                if (usages == 100) {
+                    console.emilyLog("Tak ti jsi přijebanej degeš :)");
+                } else if (usages == 10) {
+                    console.emilyLog("A dál?");
+                } else if (usages == 11) {
+                    console.emilyLog("A dáál?");
+                } else if (usages == 12) {
+                    console.emilyLog("A dááál?");
+                } else if (usages == 13) {
+                    console.emilyLog("A dáááál?");
+                } else if (usages == 14) {
+                    console.emilyLog("Kámo tak už ale wtf???");
                 } else {
-                    console.emilyLog("Tak snad jsme se už pozdravili.");
+                    // generate random number in range
+                    int randomInt = intUtils.randomInt(0, 3);
+
+                    // print random overloaded messages
+                    if (randomInt == 0) {
+                        console.emilyLog("Sorry, ale nebudu tě už znovu zdravit.");
+                    } else if (randomInt == 1) {
+                        console.emilyLog("Nebudeme se furt opakovat!");
+                    } else if (randomInt == 2) {
+                        console.emilyLog("hele neříkej to furt dokola.");
+                    } else {
+                        console.emilyLog("Tak snad jsme se už pozdravili.");
+                    }
                 }
             }
 

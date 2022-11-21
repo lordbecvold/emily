@@ -3,6 +3,7 @@ package xyz.becvold.emily;
 import xyz.becvold.emily.functions.actions.EmergencyShutdown;
 import xyz.becvold.emily.functions.reactions.Greeting;
 import xyz.becvold.emily.functions.reactions.HowAreYouAsk;
+import xyz.becvold.emily.functions.reactions.WhoAreYouAsk;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
 import java.util.Scanner;
@@ -16,12 +17,13 @@ public class EmilyCore {
     // instances initiate
     public ConsoleUtils console = new ConsoleUtils();
     public Scanner scanner = new Scanner(System.in);
+    public StringUtils stringUtils = new StringUtils();
 
     // instances of functions
     public Greeting greeting = new Greeting();
     public EmergencyShutdown emergencyShutdown = new EmergencyShutdown();
     public HowAreYouAsk howAreYouAsk = new HowAreYouAsk();
-    public StringUtils stringUtils = new StringUtils();
+    public WhoAreYouAsk whoAreYouAsk = new WhoAreYouAsk();
 
     // core function
     public void init() {
@@ -55,6 +57,11 @@ public class EmilyCore {
             // how are you ask
             else if (howAreYouAsk.isHowAreYou(input)) {
                 howAreYouAsk.answerAndAsk(input);
+            }
+
+            // who are you ask
+            else if (whoAreYouAsk.isWhoAreYouAsked(input)) {
+                whoAreYouAsk.sayWhoAreYou(input);
 
         } else {
                 // not found input msg

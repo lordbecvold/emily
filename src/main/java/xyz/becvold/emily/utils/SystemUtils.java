@@ -10,4 +10,9 @@ public class SystemUtils {
     public void appShutdown(int code) {
         System.exit(code);
     }
+
+    // get os name
+    public String getOS() {
+        return System.getProperty("os.name");
+    }
 }

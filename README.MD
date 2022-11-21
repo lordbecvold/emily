@@ -1,6 +1,6 @@
 # Project Emily
 
-Emily is artificial intelligence conceived as a chatbot
+Emily is artificial intelligence conceived as a chatbot, exclusively in the Czech language but he also knows a few phrases in other languages
 
 ## Dev plan
 - [X] Create basic Structure
