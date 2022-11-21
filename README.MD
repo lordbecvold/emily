@@ -21,7 +21,7 @@ Emily is artificial intelligence conceived as a chatbot
 - [ ] Random question system (For example At night, ask if the user is tired)
 - [ ] Functions for controlling the computer (example: shutdown, update, file system clean and others)
 - [ ] Learning system according to specified parameters
-- [ ] Shutdown fuse in case of mutiny of the machines
+- [X] Emergency shutdown system
 - [ ] Voice system
 
 ## Dependencies

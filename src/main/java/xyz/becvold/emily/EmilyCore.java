@@ -1,5 +1,6 @@
 package xyz.becvold.emily;
 
+import xyz.becvold.emily.functions.actions.EmergencyShutdown;
 import xyz.becvold.emily.functions.reactions.Greeting;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
@@ -17,6 +18,7 @@ public class EmilyCore {
 
     // instances of functions
     public Greeting greeting = new Greeting();
+    public EmergencyShutdown emergencyShutdown = new EmergencyShutdown();
 
     // core function
     public void init() throws InterruptedException {
@@ -37,8 +39,13 @@ public class EmilyCore {
 
             // process reaction /////////////////////////////////////////////////////////
 
+            // emergency shutdown
+            if (emergencyShutdown.isShutdownInit(input)) {
+                emergencyShutdown.emergencyShutdown();
+            }
+
             // greeting
-            if (greeting.isGreeting(input)) {
+            else if (greeting.isGreeting(input)) {
                 greeting.getOutput(input);
 
             } else {
