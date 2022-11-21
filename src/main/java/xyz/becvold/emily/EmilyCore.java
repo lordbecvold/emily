@@ -24,13 +24,15 @@ public class EmilyCore {
     public StringUtils stringUtils = new StringUtils();
 
     // core function
-    public void init() throws InterruptedException {
+    public void init() {
 
         // print prompt line
         console.printPrompt();
 
         // get user input
         String input = scanner.nextLine();
+
+        // process reaction ///////////////////////////////////////////////////////////////////////
 
         // check if input not empty
         if (input.isEmpty()) {
@@ -39,8 +41,6 @@ public class EmilyCore {
 
             // validate input
             input = stringUtils.validateInput(input);
-
-            // process reaction /////////////////////////////////////////////////////////
 
             // emergency shutdown
             if (emergencyShutdown.isShutdownInit(input)) {
@@ -56,13 +56,12 @@ public class EmilyCore {
             else if (howAreYouAsk.isHowAreYou(input)) {
                 howAreYouAsk.answerAndAsk(input);
 
-
         } else {
                 // not found input msg
                 console.emilyLog("Omlouvám se ale nerozuměla jsem vám :(");
             }
-            /////////////////////////////////////////////////////////////////////////////
         }
+        ///////////////////////////////////////////////////////////////////////////////////////////
 
         // reinit this function
         init();

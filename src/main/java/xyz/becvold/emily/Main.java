@@ -15,7 +15,7 @@ public class Main {
     public static WelcomeMessage welcomeMessage = new WelcomeMessage();
 
     // main app initiate
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         // print spacer
         console.printSpacer();
