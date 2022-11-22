@@ -5,10 +5,11 @@ Emily is artificial intelligence conceived as a chatbot, exclusively in the Czec
 ## Dev plan
 - [X] Create basic Structure
 - [ ] Create database structure
+- [ ] Own database of basic phrases
+- [ ] Phrases database (word meaning explanation) 
 - [X] CLI Chat system
 - [X] Input validation system
 - [X] Input recognition system
-- [ ] Own database of basic phrases
 - [ ] Calculator
 - [X] Time check (What time is it?) + write part of the day
 - [X] What day it is? reaction

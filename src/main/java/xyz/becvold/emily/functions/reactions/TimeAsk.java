@@ -53,6 +53,10 @@ public class TimeAsk {
             return true;
         } else if (input.contains("kterjecastdne")) {
             return true;
+        } else if (input.contains("jakyjecas")) {
+            return true;
+        } else if (input.contains("cojezacas")) {
+            return true;
         } else {
             return false;
         }
