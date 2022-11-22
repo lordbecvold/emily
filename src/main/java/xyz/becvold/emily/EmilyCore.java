@@ -1,10 +1,7 @@
 package xyz.becvold.emily;
 
 import xyz.becvold.emily.functions.actions.EmergencyShutdown;
-import xyz.becvold.emily.functions.reactions.Greeting;
-import xyz.becvold.emily.functions.reactions.HowAreYouAsk;
-import xyz.becvold.emily.functions.reactions.TimeAsk;
-import xyz.becvold.emily.functions.reactions.WhoAreYouAsk;
+import xyz.becvold.emily.functions.reactions.*;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
 import java.util.Scanner;
@@ -26,6 +23,7 @@ public class EmilyCore {
     public HowAreYouAsk howAreYouAsk = new HowAreYouAsk();
     public WhoAreYouAsk whoAreYouAsk = new WhoAreYouAsk();
     public TimeAsk timeAsk = new TimeAsk();
+    public WhatDayIsAsk whatDayIsAsk = new WhatDayIsAsk();
 
     // core function
     public void init() {
@@ -69,6 +67,11 @@ public class EmilyCore {
             // what is time
             else if (timeAsk.isTimeCheck(input)) {
                 timeAsk.timeAskAnswer(input);
+            }
+
+            // what is day
+            else if (whatDayIsAsk.isWhatDayAsk(input)) {
+                whatDayIsAsk.whatDayAnswer(input);
 
         } else {
                 // not found input msg

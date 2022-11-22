@@ -2,6 +2,7 @@ package xyz.becvold.emily.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 /**
  * @author Lukáš Bečvář on 18.11.22
@@ -14,6 +15,37 @@ public class TimeUtils {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
         LocalDateTime now = LocalDateTime.now();
         return dtf.format(now);
+    }
+
+    // get actual date in string
+    public static String getDate() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.YY");
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
+    }
+
+    // get day name
+    public static String getDayName() {
+        Calendar cal = Calendar.getInstance();
+        int day = cal.get(Calendar.DAY_OF_WEEK);
+
+        if (day == 1) {
+            return "Sunday";
+        } else if (day == 2) {
+            return "Monday";
+        } else if (day == 3) {
+            return "Tuesday";
+        } else if (day == 4) {
+            return "Wednesday";
+        } else if (day == 5) {
+            return "Thursday";
+        } else if (day == 6) {
+            return "Friday";
+        } else if (day == 7) {
+            return "Saturday";
+        } else {
+            return null;
+        }
     }
 
     // check of time is morning
