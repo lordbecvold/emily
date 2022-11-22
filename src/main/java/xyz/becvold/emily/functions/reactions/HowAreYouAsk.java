@@ -22,19 +22,21 @@ public class HowAreYouAsk {
 
     // check if meessage is how are you?
     public boolean isHowAreYou(String input) {
-        if (input.startsWith("jak se mas")) {
+        if (input.contains("jaksemas")) {
             return true;
-        } else if (input.startsWith("jak je")) {
+        } else if (input.contains("jakje")) {
             return true;
-        } else if (input.startsWith("jak to jde")) {
+        } else if (input.contains("jaktojde")) {
             return true;
-        } else if (input.startsWith("jak to de")) {
+        } else if (input.contains("jaktode")) {
             return true;
-        } else if (input.startsWith("how are you")) {
+        } else if (input.contains("howareyou")) {
             return true;
-        } else if (input.startsWith("ahoj jak se mas")) {
+        } else if (input.contains("ahojjaksemas")) {
             return true;
-        } else if (input.startsWith("ahoj jak je")) {
+        } else if (input.contains("ahojjakje")) {
+            return true;
+        } else if (input.contains("jaksemate")) {
             return true;
         } else {
             return false;
@@ -45,13 +47,13 @@ public class HowAreYouAsk {
     public void answerAndAsk(String input) {
 
         // check if ask is overused
-        if (usages > 3) {
+        if (usages > 30) {
 
             // print overused message
-            if (input.startsWith("how are you")) {
+            if (input.contains("howareyou")) {
                 console.emilyLog("We already said that!");
             } else {
-                if (usages == 10) { // 10 usages (funny message)
+                if (usages == 35) { // 10 usages (funny message)
                     console.emilyLog("Nebudu se opakovat wtf???");
                 } else if (usages == 100) { // 100 usages (funny message)
                     console.emilyLog("Tak tobě mrdá, kámo :)");
@@ -63,19 +65,19 @@ public class HowAreYouAsk {
         } else {
 
             // generate valid output
-            if (input.startsWith("jak se mas")) {
+            if (input.contains("jaksemas")) {
                 console.emilyLog("Mám se dobře a co ty?");
-            } else if (input.startsWith("jak je")) {
+            } else if (input.contains("jak e")) {
                 console.emilyLog("Celkem to de a co ty?");
-            } else if (input.startsWith("jak to jde")) {
+            } else if (input.contains("jaktojde")) {
                 console.emilyLog("Jde to dobře a co ty?");
-            } else if (input.startsWith("jak to de")) {
+            } else if (input.contains("jaktode")) {
                 console.emilyLog("V klidu a co ty?");
-            } else if (input.startsWith("how are you")) {
+            } else if (input.contains("howareyou")) {
                 console.emilyLog("I am nice, and you?");
-            } else if (input.startsWith("ahoj jak se mas")) {
+            } else if (input.contains("ahojjaksemas")) {
                 console.emilyLog("Čau, jo dobře a co ty?");
-            } else if (input.startsWith("ahoj jak je")) {
+            } else if (input.contains("ahojjakje")) {
                 console.emilyLog("Ahoj, no jako celkem ok");
             } else {
                 console.emilyLog("Mám se dobře, děkuji za optání a co ty?");
@@ -125,7 +127,7 @@ public class HowAreYouAsk {
             } else {
 
                 // check if ask in eng
-                if (input.startsWith("how are you")) {
+                if (input.contains("howareyou")) {
                     console.emilyLog("Ok.");
                 } else {
                     console.emilyLog("Aha, ok.");

@@ -3,6 +3,7 @@ package xyz.becvold.emily;
 import xyz.becvold.emily.functions.actions.EmergencyShutdown;
 import xyz.becvold.emily.functions.reactions.Greeting;
 import xyz.becvold.emily.functions.reactions.HowAreYouAsk;
+import xyz.becvold.emily.functions.reactions.TimeAsk;
 import xyz.becvold.emily.functions.reactions.WhoAreYouAsk;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
@@ -24,6 +25,7 @@ public class EmilyCore {
     public EmergencyShutdown emergencyShutdown = new EmergencyShutdown();
     public HowAreYouAsk howAreYouAsk = new HowAreYouAsk();
     public WhoAreYouAsk whoAreYouAsk = new WhoAreYouAsk();
+    public TimeAsk timeAsk = new TimeAsk();
 
     // core function
     public void init() {
@@ -62,6 +64,11 @@ public class EmilyCore {
             // who are you ask
             else if (whoAreYouAsk.isWhoAreYouAsked(input)) {
                 whoAreYouAsk.sayWhoAreYou(input);
+            }
+
+            // what is time
+            else if (timeAsk.isTimeCheck(input)) {
+                timeAsk.timeAskAnswer(input);
 
         } else {
                 // not found input msg

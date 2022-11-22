@@ -9,24 +9,24 @@ import java.time.format.DateTimeFormatter;
  */
 public class TimeUtils {
 
-    // get actual time in string
-    public static int getTime() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH");
+    // get actual time in string by format
+    public static String getTime(String format) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
         LocalDateTime now = LocalDateTime.now();
-        return Integer.parseInt(dtf.format(now));
+        return dtf.format(now);
     }
 
     // check of time is morning
     public static boolean isMorningTime() {
-        if (getTime() == 5) {
+        if (getTime("HH").equals("5")) {
             return true;
-        } else if (getTime() == 6) {
+        } else if (getTime("HH").equals("6")) {
             return true;
-        } else if (getTime() == 7) {
+        } else if (getTime("HH").equals("7")) {
             return true;
-        } else if (getTime() == 8) {
+        } else if (getTime("HH").equals("8")) {
             return true;
-        } else if (getTime() == 9) {
+        } else if (getTime("HH").equals("9")) {
             return true;
         } else {
             return false;
@@ -35,9 +35,9 @@ public class TimeUtils {
 
     // check of time is after morning
     public static boolean isAfterMorningTime() {
-        if (getTime() == 10) {
+        if (getTime("HH").equals("10")) {
             return true;
-        } else if (getTime() == 11) {
+        } else if (getTime("HH").equals("11")) {
             return true;
         } else {
             return false;
@@ -46,7 +46,7 @@ public class TimeUtils {
 
     // check of time is noon
     public static boolean isNoonTime() {
-        if (getTime() == 12) {
+        if (getTime("HH").equals("12")) {
             return true;
         } else {
             return false;
@@ -55,11 +55,11 @@ public class TimeUtils {
 
     // check of time is early evning
     public static boolean isEarlyEveningTime() {
-        if (getTime() == 17) {
+        if (getTime("HH").equals("17")) {
             return true;
-        } else if (getTime() == 18) {
+        } else if (getTime("HH").equals("18")) {
             return true;
-        } else if (getTime() == 19) {
+        } else if (getTime("HH").equals("19")) {
             return true;
         }  else {
             return false;
@@ -68,17 +68,17 @@ public class TimeUtils {
 
     // check of time is after noon
     public static boolean isAafternoonTime() {
-        if (getTime() == 12) {
+        if (getTime("HH").equals("12")) {
             return true;
-        } else if (getTime() == 13) {
+        } else if (getTime("HH").equals("13")) {
             return true;
-        } else if (getTime() == 14) {
+        } else if (getTime("HH").equals("14")) {
             return true;
-        } else if (getTime() == 15) {
+        } else if (getTime("HH").equals("15")) {
             return true;
-        } else if (getTime() == 16) {
+        } else if (getTime("HH").equals("16")) {
             return true;
-        } else if (getTime() == 17) {
+        } else if (getTime("HH").equals("17")) {
             return true;
         }  else {
             return false;
@@ -87,13 +87,13 @@ public class TimeUtils {
 
     // check of time is eeavning
     public static boolean isEveningTime() {
-        if (getTime() == 20) {
+        if (getTime("HH").equals("20")) {
             return true;
-        } else if (getTime() == 21) {
+        } else if (getTime("HH").equals("21")) {
             return true;
-        } else if (getTime() == 22) {
+        } else if (getTime("HH").equals("22")) {
             return true;
-        } else if (getTime() == 23) {
+        } else if (getTime("HH").equals("23")) {
             return true;
         } else {
             return false;
@@ -102,15 +102,15 @@ public class TimeUtils {
 
     // check of time is night
     public static boolean isNightTime() {
-        if (getTime() == 0) {
+        if (getTime("HH").equals("0")) {
             return true;
-        } else if (getTime() == 1) {
+        } else if (getTime("HH").equals("1")) {
             return true;
-        } else if (getTime() == 2) {
+        } else if (getTime("HH").equals("2")) {
             return true;
-        } else if (getTime() == 3) {
+        } else if (getTime("HH").equals("3")) {
             return true;
-        } else if (getTime() == 4) {
+        } else if (getTime("HH").equals("4")) {
             return true;
         } else {
             return false;
