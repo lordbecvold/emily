@@ -16,33 +16,60 @@ public class WhoAreYouAsk {
 
     // check if who are you used
     public boolean isWhoAreYouAsked(String input) {
-        if (input.contains("kdo jsi")) {
+        if (input.contains("kdojsi")) {
             return true;
-        } else if (input.contains("kdo si")) {
+        } else if (input.contains("kdosi")) {
             return true;
-        } else if (input.contains("who are you")) {
+        } else if (input.contains("whoareyou")) {
             return true;
-        } else if (input.contains("what's your name")) {
+        } else if (input.contains("what'syourname")) {
             return true;
-        } else if (input.contains("jak se jmenujes")) {
+        } else if (input.contains("jaksejmenujes")) {
             return true;
-        } else if (input.contains("jak se menujes")) {
+        } else if (input.contains("jaksemenujes")) {
             return true;
-        } else if (input.contains("jake je tvoje jmeno")) {
+        } else if (input.contains("jakejetvojejmeno")) {
             return true;
-        } else if (input.contains("jake je tvoje meno")) {  
+        } else if (input.contains("jakejetvojemeno")) {
             return true;  
-        } else if (input.contains("tvoje jmeno")) {
+        } else if (input.contains("tvojejmeno")) {
             return true;
-        } else if (input.contains("tve jmeno")) {
+        } else if (input.contains("tvejmeno")) {
             return true;
-        } else if (input.contains("tvoje meno")) {
+        } else if (input.contains("tvojemeno")) {
             return true;
-        } else if (input.contains("tve meno")) {
+        } else if (input.contains("tvemeno")) {
             return true;
-        } else if (input.contains("co jsi")) {
+        } else if (input.contains("cojsi")) {
             return true;
-        } else if (input.contains("co si")) {
+        } else if (input.contains("cosi")) {
+            return true;
+        } else if (input.contains("kdojste")) {
+            return true;
+        } else if (input.contains("procjste")) {
+            return true;
+        } else if (input.contains("jaksejmenujete")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // check if input what's your name in czech
+    public boolean isWhatsName(String input) {
+        if (input.contains("jaksejmenujes")) {
+            return true;
+        } else if (input.contains("jaksemenujes")) {
+            return true;
+        } else if (input.contains("jakejetvojejmeno")) {
+            return true;
+        } else if (input.contains("jakejetvojemeno")) {
+            return true;
+        } else if (input.contains("tvojejmeno")) {
+            return true;
+        } else if (input.contains("tvejmeno")) {
+            return true;
+        } else if (input.contains("tvemeno")) {
             return true;
         } else {
             return false;
@@ -56,7 +83,7 @@ public class WhoAreYouAsk {
         if (usages > 8) {
 
             // print overused message
-            if (input.contains("who are you") || input.contains("what's your name")) {
+            if (input.contains("whoareyou") || input.contains("what'syourname")) {
                 console.emilyLog("I already answered that.");
             } else {
                 console.emilyLog("Na to jsem už odpověděla.");
@@ -65,12 +92,12 @@ public class WhoAreYouAsk {
         } else {
 
             // print valid return
-            if (input.contains("who are you")) {
+            if (input.contains("whoareyou")) {
                 console.emilyLog("I'm Emily, an Artificial Intelligence designed to converse and control a computer's operating system.");
-            } else if (input.contains("what's your name")) {
+            } else if (input.contains("what'syourname")) {
                 console.emilyLog("My name is emily.");
 
-            } else if (input.contains("jak se jmenujes") || input.contains("jak se menujes") || input.contains("jake je tvoje jmeno") || input.contains("jake je tvoje meno") || input.contains("tvoje jmeno") || input.contains("tve jmeno") || input.contains("tvoje meno") || input.contains("tve meno")) {
+            } else if (isWhatsName(input)) {
                 console.emilyLog("Mé jméno je Emily.");
             } else {
                 console.emilyLog("Jsem Emily, Umělá inteligence navržená ke konverzaci, a ovládání operačního systému počítače.");
