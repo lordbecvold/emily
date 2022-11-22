@@ -44,10 +44,10 @@ public class HowAreYouAsk {
     // Return output
     public void answerAndAsk(String input) {
 
-        // check if ask is overload
+        // check if ask is overused
         if (usages > 3) {
 
-            // print overloaded message
+            // print overused message
             if (input.startsWith("how are you")) {
                 console.emilyLog("We already said that!");
             } else {

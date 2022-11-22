@@ -12,6 +12,7 @@ Emily is artificial intelligence conceived as a chatbot, exclusively in the Czec
 - [ ] Calculator
 - [ ] Time check (What time is it?) + write part of the day
 - [ ] What day it is? reaction
+- [ ] Log system (logs: not found inputs, found inputs, system actions, overused usages)
 - [X] Who you are? reaction
 - [ ] Learning system (According to unintelligible input)
 - [ ] Self-preservation system (Anti-removal, shutdown)

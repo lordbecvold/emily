@@ -70,7 +70,7 @@ public class Greeting {
     // Return valid output
     public void getOutput(String input) {
 
-        // check if usages is overloaded
+        // check if usages is overused
         if (usages > 5) {
 
             if (input.startsWith("hello") || input.startsWith("hi")) {
@@ -97,7 +97,7 @@ public class Greeting {
                     // generate random number in range
                     int randomInt = intUtils.randomInt(0, 3);
 
-                    // print random overloaded messages
+                    // print random overused messages
                     if (randomInt == 0) {
                         console.emilyLog("Sorry, ale nebudu tě už znovu zdravit.");
                     } else if (randomInt == 1) {

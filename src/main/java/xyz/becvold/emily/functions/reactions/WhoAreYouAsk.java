@@ -52,10 +52,10 @@ public class WhoAreYouAsk {
     // print who are you
     public void sayWhoAreYou(String input) {
 
-        // check if usags is overloaded
+        // check if usags is overused
         if (usages > 8) {
 
-            // print overloaded message
+            // print overused message
             if (input.contains("who are you") || input.contains("what's your name")) {
                 console.emilyLog("I already answered that.");
             } else {
