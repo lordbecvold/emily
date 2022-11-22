@@ -11,6 +11,7 @@ Emily is artificial intelligence conceived as a chatbot, exclusively in the Czec
 - [X] Input validation system
 - [X] Input recognition system
 - [ ] Calculator
+- [ ] Where ar you? input
 - [X] Time check (What time is it?) + write part of the day
 - [X] What day it is? reaction
 - [ ] Log system (logs: not found inputs, found inputs, system actions, overused usages)
