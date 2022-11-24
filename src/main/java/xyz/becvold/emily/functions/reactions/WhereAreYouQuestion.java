@@ -52,19 +52,33 @@ public class WhereAreYouQuestion {
 
         String hostname = InetAddress.getLocalHost().getHostName();
 
-        if (input.contains("whereyou")) {
-            console.emilyLog("I'm on a computer called: " + hostname);
-        } else if (input.contains("wherejsi")) {
-            console.emilyLog("I'm on a computer called: " + hostname);
-        } else if (input.contains("wheresi")) {
-            console.emilyLog("I'm on a computer called: " + hostname);
-        } else if (input.contains("whereareyou")) {
-            console.emilyLog("I'm on a computer called: " + hostname);
+        // check if question si overused
+        if (usages > 8) {
+            if (input.contains("whereyou")) {
+                console.emilyLog("I already told you this.");
+            } else if (input.contains("wherejsi")) {
+                console.emilyLog("I already told you this.");
+            } else if (input.contains("wheresi")) {
+                console.emilyLog("I already told you this.");
+            } else if (input.contains("whereareyou")) {
+                console.emilyLog("I already told you this.");
+            } else {
+                console.emilyLog("Nebudu znovu odpovídat.");
+            }
+
         } else {
+            if (input.contains("whereyou")) {
+                console.emilyLog("I'm on a computer called: " + hostname);
+            } else if (input.contains("wherejsi")) {
+                console.emilyLog("I'm on a computer called: " + hostname);
+            } else if (input.contains("wheresi")) {
+                console.emilyLog("I'm on a computer called: " + hostname);
+            } else if (input.contains("whereareyou")) {
+                console.emilyLog("I'm on a computer called: " + hostname);
+            } else {
                 console.emilyLog("Jsem na počítači s názvem: " + hostname);
+            }
         }
-
-
 
         // set usages + 1
         usages++;
