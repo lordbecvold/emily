@@ -27,6 +27,7 @@ public class EmilyCore {
     public TimeQuestion timeAsk = new TimeQuestion();
     public WhatDayIsQuestion whatDayIsAsk = new WhatDayIsQuestion();
     public WhereAreYouQuestion whereAreYouQuestion = new WhereAreYouQuestion();
+    public WhyAreYouQuestion whyAreYouQuestion = new WhyAreYouQuestion();
 
     // core function
     public void init() throws UnknownHostException {
@@ -80,6 +81,11 @@ public class EmilyCore {
                     whereAreYouQuestion.onExecute(input);
                 }
 
+                // why are you
+                if (whyAreYouQuestion.isExecute(input)) {
+                    whyAreYouQuestion.onExecute(input);
+                }
+
                 // what is day
                 if (whatDayIsAsk.isExecute(input)) {
                     whatDayIsAsk.onExecute(input);
@@ -108,6 +114,8 @@ public class EmilyCore {
         } else if (whereAreYouQuestion.isExecute(input)) {
             return true;
         } else if (whatDayIsAsk.isExecute(input)) {
+            return true;
+        } else if (whyAreYouQuestion.isExecute(input)) {
             return true;
         } else {
             return false;
