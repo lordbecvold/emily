@@ -6,7 +6,7 @@ import xyz.becvold.emily.utils.ConsoleUtils;
  * @author Lukáš Bečvář on 21.11.22
  * @project Emily
  */
-public class WhoAreYouAsk {
+public class WhoAreYouQuestion {
 
     // usages count
     public int usages = 0;

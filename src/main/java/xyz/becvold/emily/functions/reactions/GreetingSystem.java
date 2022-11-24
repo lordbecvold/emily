@@ -9,7 +9,7 @@ import java.util.Random;
  * @author Lukáš Bečvář on 18.11.22
  * @project Emily
  */
-public class Greeting {
+public class GreetingSystem {
 
     // usages count
     public int usages = 0;

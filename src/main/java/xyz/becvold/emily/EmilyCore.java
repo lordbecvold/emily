@@ -18,12 +18,12 @@ public class EmilyCore {
     public StringUtils stringUtils = new StringUtils();
 
     // instances of functions
-    public Greeting greeting = new Greeting();
+    public GreetingSystem greeting = new GreetingSystem();
     public EmergencyShutdown emergencyShutdown = new EmergencyShutdown();
-    public HowAreYouAsk howAreYouAsk = new HowAreYouAsk();
-    public WhoAreYouAsk whoAreYouAsk = new WhoAreYouAsk();
-    public TimeAsk timeAsk = new TimeAsk();
-    public WhatDayIsAsk whatDayIsAsk = new WhatDayIsAsk();
+    public HowAreYouQuestion howAreYouAsk = new HowAreYouQuestion();
+    public WhoAreYouQuestion whoAreYouAsk = new WhoAreYouQuestion();
+    public TimeQuestion timeAsk = new TimeQuestion();
+    public WhatDayIsQuestion whatDayIsAsk = new WhatDayIsQuestion();
 
     // core function
     public void init() {

@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author Lukáš Bečvář on 21.11.22
  * @project Emily
  */
-public class HowAreYouAsk {
+public class HowAreYouQuestion {
 
     // usages count
     public int usages = 0;

@@ -8,7 +8,7 @@ import xyz.becvold.emily.utils.TimeUtils;
  * @author Lukáš Bečvář on 22.11.22
  * @project Emily
  */
-public class TimeAsk {
+public class TimeQuestion {
 
     // usages count
     public int usages = 0;
