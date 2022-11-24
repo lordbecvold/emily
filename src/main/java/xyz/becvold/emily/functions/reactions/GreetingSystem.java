@@ -24,13 +24,19 @@ public class GreetingSystem {
             return true;
         } else if (input.contains("cus")) {
             return true;
+        } else if (input.contains("cau")) {
+            return true;
         } else if (input.contains("zdravim")) {
             return true;
         } else if (input.contains("nazdar")) {
             return true;
         } else if (input.contains("zdar")) {
             return true;
+        } else if (input.contains("nazdarek")) {
+            return true;
         } else if (input.contains("cusik")) {
+            return true;
+        } else if (input.contains("zdarec")) {
             return true;
         } else if (input.contains("ahojda")) {
             return true;
@@ -63,6 +69,10 @@ public class GreetingSystem {
         } else if (input.contains("cc")) {
             return true;
         } else if (input.contains("cs")) {
+            return true;
+        } else if (input.contains("caw")) {
+            return true;
+        } else if (input.contains("cav")) {
             return true;
         } else if (input.contains("zdravimvas")) {
             return true;
@@ -128,6 +138,9 @@ public class GreetingSystem {
                 console.emilyLog(getRandomGreet());
 
             } else if (input.contains("zdar")) {
+                console.emilyLog(getRandomGreet());
+
+            } else if (input.contains("nazdarek")) {
                 console.emilyLog(getRandomGreet());
 
             } else if (input.contains("cusik")) {
@@ -209,6 +222,12 @@ public class GreetingSystem {
             } else if (input.contains("cs")) {
                 console.emilyLog("cc");
 
+            } else if (input.contains("cau")) {
+                console.emilyLog("Čau čau čau čau čau čau čau čáááu buzeranti!");
+
+            } else if (input.contains("caw") || input.contains("cav")) {
+                console.emilyLog("Cawwwww bráško!");
+
             } else {
                 console.emilyLog("Ahoj");
             }
@@ -220,7 +239,7 @@ public class GreetingSystem {
 
     // get random great from array
     public static String getRandomGreet() {
-        String[] rooms = {"Ahoj.", "Čus!", "Zdravím tě.", "Ahojda!", "Čauky.", "Nazdar!"};
+        String[] rooms = {"Ahoj.", "Čus!", "Zdravím tě.", "Ahojda!", "Čauky.", "Nazdar!", "Nazdárek :)"};
         String currentRoom;
         Random rand = new Random();
         currentRoom = rooms[rand.nextInt( rooms.length)];
