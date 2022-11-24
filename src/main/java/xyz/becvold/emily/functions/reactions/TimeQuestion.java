@@ -17,8 +17,8 @@ public class TimeQuestion {
     public ConsoleUtils console = new ConsoleUtils();
     public IntUtils intUtils = new IntUtils();
 
-    // check if time ask executed
-    public boolean isTimeCheck(String input) {
+    // check if time executed
+    public boolean isExecute(String input) {
         if (input.contains("kolikjehodin")) {
             return true;
         } else if (input.contains("kolikje")) {
@@ -62,8 +62,8 @@ public class TimeQuestion {
         }
     }
 
-    // time ask output
-    public void timeAskAnswer(String input) {
+    // execute time output
+    public void onExecute(String input) {
 
         // check if overused
         if (usages > 30) {

@@ -15,8 +15,8 @@ public class WhatDayIsQuestion {
     // init objects
     public ConsoleUtils console = new ConsoleUtils();
 
-    // check if day ask executed
-    public boolean isWhatDayAsk(String input) {
+    // check if day executed
+    public boolean isExecute(String input) {
         if (input.contains("cojezaden")) {
             return true;
         } else if (input.contains("jakyjeden")) {
@@ -46,8 +46,8 @@ public class WhatDayIsQuestion {
         }
     }
 
-    // what day output
-    public void whatDayAnswer(String input) {
+    // execute what day output
+    public void onExecute(String input) {
 
         // lang check
         if (input.contains("whatday")) {

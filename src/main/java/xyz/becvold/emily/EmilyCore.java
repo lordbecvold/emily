@@ -50,28 +50,28 @@ public class EmilyCore {
             }
 
             // greeting
-            else if (greeting.isGreeting(input)) {
-                greeting.getOutput(input);
+            else if (greeting.isExecute(input)) {
+                greeting.onExecute(input);
             }
 
             // how are you ask
-            else if (howAreYouAsk.isHowAreYou(input)) {
-                howAreYouAsk.answerAndAsk(input);
+            else if (howAreYouAsk.isExecute(input)) {
+                howAreYouAsk.onExecute(input);
             }
 
             // who are you ask
-            else if (whoAreYouAsk.isWhoAreYouAsked(input)) {
-                whoAreYouAsk.sayWhoAreYou(input);
+            else if (whoAreYouAsk.isExecute(input)) {
+                whoAreYouAsk.onExecute(input);
             }
 
             // what is time
-            else if (timeAsk.isTimeCheck(input)) {
-                timeAsk.timeAskAnswer(input);
+            else if (timeAsk.isExecute(input)) {
+                timeAsk.onExecute(input);
             }
 
             // what is day
-            else if (whatDayIsAsk.isWhatDayAsk(input)) {
-                whatDayIsAsk.whatDayAnswer(input);
+            else if (whatDayIsAsk.isExecute(input)) {
+                whatDayIsAsk.onExecute(input);
 
         } else {
                 // not found input msg

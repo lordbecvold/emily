@@ -14,8 +14,8 @@ public class WhoAreYouQuestion {
     // init objects
     public ConsoleUtils console = new ConsoleUtils();
 
-    // check if who are you used
-    public boolean isWhoAreYouAsked(String input) {
+    // check if who are you executed
+    public boolean isExecute(String input) {
         if (input.contains("kdojsi")) {
             return true;
         } else if (input.contains("kdosi")) {
@@ -76,8 +76,8 @@ public class WhoAreYouQuestion {
         }
     }
 
-    // print who are you
-    public void sayWhoAreYou(String input) {
+    // execute who are you output
+    public void onExecute(String input) {
 
         // check if usags is overused
         if (usages > 8) {

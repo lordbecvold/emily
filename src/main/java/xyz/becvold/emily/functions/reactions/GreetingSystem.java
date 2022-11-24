@@ -19,7 +19,7 @@ public class GreetingSystem {
     public IntUtils intUtils = new IntUtils();
 
     // check if meessage is greeting
-    public boolean isGreeting(String input) {
+    public boolean isExecute(String input) {
         if (input.startsWith("ahoj") && !input.startsWith("ahojjaksemas") && !input.startsWith("ahojjakje")) {
             return true;
         } else if (input.contains("cus")) {
@@ -71,8 +71,8 @@ public class GreetingSystem {
         }
     }
 
-    // Return valid output
-    public void getOutput(String input) {
+    // execute valid output
+    public void onExecute(String input) {
 
         // check if usages is overused
         if (usages > 30) {

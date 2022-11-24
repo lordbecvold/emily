@@ -21,7 +21,7 @@ public class HowAreYouQuestion {
     public StringUtils stringUtils = new StringUtils();
 
     // check if meessage is how are you?
-    public boolean isHowAreYou(String input) {
+    public boolean isExecute(String input) {
         if (input.contains("jaksemas")) {
             return true;
         } else if (input.contains("jakje")) {
@@ -43,8 +43,8 @@ public class HowAreYouQuestion {
         }
     }
 
-    // Return output
-    public void answerAndAsk(String input) {
+    // execute output
+    public void onExecute(String input) {
 
         // check if ask is overused
         if (usages > 30) {
