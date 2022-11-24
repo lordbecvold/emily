@@ -3,6 +3,8 @@ package xyz.becvold.emily;
 import xyz.becvold.emily.functions.messages.WelcomeMessage;
 import xyz.becvold.emily.utils.ConsoleUtils;
 
+import java.net.UnknownHostException;
+
 /**
  * @author Lukáš Bečvář on 17.11.22
  * @project Emily
@@ -15,7 +17,7 @@ public class Main {
     public static WelcomeMessage welcomeMessage = new WelcomeMessage();
 
     // main app initiate
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnknownHostException {
 
         // print spacer
         console.printSpacer();

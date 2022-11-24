@@ -4,6 +4,8 @@ import xyz.becvold.emily.functions.actions.EmergencyShutdown;
 import xyz.becvold.emily.functions.reactions.*;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
+
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 /**
@@ -24,9 +26,10 @@ public class EmilyCore {
     public WhoAreYouQuestion whoAreYouAsk = new WhoAreYouQuestion();
     public TimeQuestion timeAsk = new TimeQuestion();
     public WhatDayIsQuestion whatDayIsAsk = new WhatDayIsQuestion();
+    public WhereAreYouQuestion whereAreYouQuestion = new WhereAreYouQuestion();
 
     // core function
-    public void init() {
+    public void init() throws UnknownHostException {
 
         // print prompt line
         console.printPrompt();
@@ -44,36 +47,44 @@ public class EmilyCore {
             // validate input
             input = stringUtils.validateInput(input);
 
-            // emergency shutdown
-            if (emergencyShutdown.isShutdownInit(input)) {
-                emergencyShutdown.emergencyShutdown();
-            }
+            // check if is an input in the system
+            if (isInputFound(input)) {
 
-            // greeting
-            else if (greeting.isExecute(input)) {
-                greeting.onExecute(input);
-            }
+                // emergency shutdown
+                if (emergencyShutdown.isShutdownInit(input)) {
+                    emergencyShutdown.emergencyShutdown();
+                }
 
-            // how are you ask
-            else if (howAreYouAsk.isExecute(input)) {
-                howAreYouAsk.onExecute(input);
-            }
+                // greeting
+                if (greeting.isExecute(input)) {
+                    greeting.onExecute(input);
+                }
 
-            // who are you ask
-            else if (whoAreYouAsk.isExecute(input)) {
-                whoAreYouAsk.onExecute(input);
-            }
+                // how are you
+                if (howAreYouAsk.isExecute(input)) {
+                    howAreYouAsk.onExecute(input);
+                }
 
-            // what is time
-            else if (timeAsk.isExecute(input)) {
-                timeAsk.onExecute(input);
-            }
+                // who are you
+                if (whoAreYouAsk.isExecute(input)) {
+                    whoAreYouAsk.onExecute(input);
+                }
 
-            // what is day
-            else if (whatDayIsAsk.isExecute(input)) {
-                whatDayIsAsk.onExecute(input);
+                // what is time
+                if (timeAsk.isExecute(input)) {
+                    timeAsk.onExecute(input);
+                }
 
-        } else {
+                // where are you
+                if (whereAreYouQuestion.isExecute(input)) {
+                    whereAreYouQuestion.onExecute(input);
+                }
+
+                // what is day
+                if (whatDayIsAsk.isExecute(input)) {
+                    whatDayIsAsk.onExecute(input);
+                }
+            } else {
                 // not found input msg
                 console.emilyLog("Omlouvám se ale nerozuměla jsem vám :(");
             }
@@ -82,5 +93,24 @@ public class EmilyCore {
 
         // reinit this function
         init();
+    }
+
+    // check if input found with is executed method
+    public boolean isInputFound(String input) {
+        if (emergencyShutdown.isShutdownInit(input)) {
+            return true;
+        } else if (greeting.isExecute(input)) {
+            return true;
+        } else if (howAreYouAsk.isExecute(input)) {
+            return true;
+        } else if (whoAreYouAsk.isExecute(input)) {
+            return true;
+        } else if (whereAreYouQuestion.isExecute(input)) {
+            return true;
+        } else if (whatDayIsAsk.isExecute(input)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
