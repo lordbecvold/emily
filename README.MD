@@ -5,9 +5,9 @@ Emily is artificial intelligence conceived as a chatbot, exclusively in the Czec
 ## Dev plan
 - [X] Create basic Structure
 - [ ] Reset all function usages count at 00:00
-- [ ] Create in main by changing int found and check if 0 write not found msg
-- [ ] isExecute check directly to oneecute
-- [ ] In all functions inputs list in the array and then check if the input is in the arrays
+- [ ] Create in main class int foundInput and check if 0 write not found msg
+- [ ] isExecute check directly to onExecute
+- [ ] In all functions inputs list in the string array
 - [ ] Create database structure
 - [ ] Own database of basic phrases
 - [ ] Phrases database (word meaning explanation) 
