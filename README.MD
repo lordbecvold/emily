@@ -24,7 +24,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [ ] Personality system (opinions, favorite color, game, music, etc.)...
 - [ ] Voice system
 
-## Static responses function todo
+## Static responses functions todo
 - [ ] Where are you? response
 - [ ] Time check (What time is it?) + write part of the day response
 - [ ] What day it is? response
