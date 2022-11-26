@@ -22,8 +22,12 @@ public class StringUtils {
         // replace all to lower case
         input = input.toLowerCase();
 
-        // remove commas
+        // remove special chars
         input = input.replaceAll(",", "");
+        input = input.replaceAll("!", "");
+        input = input.replaceAll("'", "");
+        input = input.replaceAll("\\.", "");
+        input = input.replaceAll("\\?", "");
 
         // remove spaces
         input = input.replaceAll(" ", "");

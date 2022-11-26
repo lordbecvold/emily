@@ -2,7 +2,6 @@ package xyz.becvold.emily;
 
 import xyz.becvold.emily.functions.messages.WelcomeMessage;
 import xyz.becvold.emily.utils.ConsoleUtils;
-
 import java.net.UnknownHostException;
 
 /**
@@ -15,6 +14,9 @@ public class Main {
     public static ConsoleUtils console = new ConsoleUtils();
     public static EmilyCore core = new EmilyCore();
     public static WelcomeMessage welcomeMessage = new WelcomeMessage();
+
+    // variable for check if function found
+    public static int inputFound;
 
     // main app initiate
     public static void main(String[] args) throws UnknownHostException {

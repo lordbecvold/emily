@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <build.version>0.0.1</build.version>
+        <build.version>1.0.0</build.version>
         <build.package>xyz.becvold.emily</build.package>
         <build.main>xyz.becvold.emily.Main</build.main>
         <build.java.version>17</build.java.version>

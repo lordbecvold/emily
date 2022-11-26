@@ -1,13 +1,10 @@
 # Project Emily
 
-Emily is artificial intelligence conceived as a chatbot, exclusively in the Czech language but he also knows a few phrases in other languages
+Emily is 'artificial intelligence' chatbot & smart asistent.
 
-## Dev plan
+## Dev todo
 - [X] Create basic Structure
 - [ ] Reset all function usages count at 00:00
-- [ ] Create in main class int foundInput and check if 0 write not found msg
-- [ ] isExecute check directly to onExecute
-- [ ] In all functions inputs list in the string array
 - [ ] Create database structure
 - [ ] Own database of basic phrases
 - [ ] Phrases database (word meaning explanation) 
@@ -15,11 +12,7 @@ Emily is artificial intelligence conceived as a chatbot, exclusively in the Czec
 - [X] Input validation system
 - [X] Input recognition system
 - [ ] Calculator
-- [X] Where ar you? input
-- [X] Time check (What time is it?) + write part of the day
-- [X] What day it is? reaction
 - [ ] Log system (logs: not found inputs, found inputs, system actions, overused usages)
-- [X] Who you are? reaction
 - [ ] Learning system (According to unintelligible input)
 - [ ] Self-preservation system (Anti-removal, shutdown)
 - [ ] Language recognition
@@ -28,9 +21,17 @@ Emily is artificial intelligence conceived as a chatbot, exclusively in the Czec
 - [ ] Random question system (For example At night, ask if the user is tired)
 - [ ] Functions for controlling the computer (example: shutdown, update, file system clean and others)
 - [ ] Learning system according to specified parameters
-- [X] Emergency shutdown system
 - [ ] Personality system (opinions, favorite color, game, music, etc.)...
 - [ ] Voice system
+
+## Static responses function todo
+- [ ] Where are you? response
+- [ ] Time check (What time is it?) + write part of the day response
+- [ ] What day it is? response
+- [ ] Who you are? response
+- [ ] Emergency shutdown system
+- [ ] Say function (say [msg to say]) response
+- [ ] help function (display emily's features) response
 
 ## Dependencies
 This project requires Java 17.
