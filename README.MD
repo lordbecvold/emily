@@ -22,6 +22,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [ ] Functions for controlling the computer (example: shutdown, update, file system clean and others)
 - [ ] Learning system according to specified parameters
 - [ ] Personality system (opinions, favorite color, game, music, etc.)...
+- [ ] Internet search asistent
 - [ ] Voice system
 
 ## Static responses functions todo
