@@ -15,6 +15,7 @@ public class Main {
     public static ConsoleUtils console = new ConsoleUtils();
     public static EmilyCore core = new EmilyCore();
     public static WelcomeMessage welcomeMessage = new WelcomeMessage();
+    public static Database database = new Database();
 
     // variable for check if function found
     public static int inputFound;
@@ -25,13 +26,16 @@ public class Main {
     // main app initiate
     public static void main(String[] args) throws UnknownHostException {
 
-        // print spacer
+        // print spacer ///////////////////////////////////////////////////////
         console.printSpacer();
 
         // print initiate msg
         console.systemLog("System initiating...");
 
-        // print spacer
+        // init database system
+        database.init();
+
+        // print spacer ///////////////////////////////////////////////////////
         console.printSpacer();
 
         // print welcome msg function

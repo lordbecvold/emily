@@ -3,8 +3,6 @@ package xyz.becvold.emily;
 import xyz.becvold.emily.functions.responses.*;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
-import xyz.becvold.emily.utils.TimeUtils;
-
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
