@@ -4,7 +4,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 
 ## Dev todo
 - [X] Create basic Structure
-- [ ] Reset all function usages count at 00:00
+- [X] Reset all function usages count at 00:00
 - [ ] Create database structure
 - [ ] Own database of basic phrases
 - [ ] Phrases database (word meaning explanation) 

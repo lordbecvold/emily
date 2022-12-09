@@ -3,6 +3,7 @@ package xyz.becvold.emily.functions.responses;
 import xyz.becvold.emily.Main;
 import xyz.becvold.emily.utils.ArraysHelper;
 import xyz.becvold.emily.utils.ConsoleUtils;
+import xyz.becvold.emily.utils.TimeUtils;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,6 +22,13 @@ public class Test {
 
     // init function
     public void execute(String input) {
+
+        // reset usages if is new day
+        if (!Main.currentDate.equals(TimeUtils.getDate())) {
+            Main.currentDate = TimeUtils.getDate();
+            usages = 0;
+            console.log("reset");
+        }
 
         // create final input array
         List finalInputs = arraysHelper.createFinalInputList(inputsList);
