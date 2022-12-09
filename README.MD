@@ -23,6 +23,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [ ] Learning system according to specified parameters
 - [ ] Personality system (opinions, favorite color, game, music, etc.)...
 - [ ] Internet search asistent
+- [ ] Inventing scenarios and situations
 - [ ] Voice system
 
 ## Static responses functions todo
@@ -33,6 +34,9 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [ ] Emergency shutdown system
 - [ ] Say function (say [msg to say]) response
 - [ ] help function (display emily's features) response
+- [ ] will AI take over the world?
+- [ ] who is your creator?
+
 
 ## Dependencies
 This project requires Java 17.
