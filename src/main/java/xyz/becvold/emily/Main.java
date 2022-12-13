@@ -16,6 +16,7 @@ public class Main {
     public static EmilyCore core = new EmilyCore();
     public static WelcomeMessage welcomeMessage = new WelcomeMessage();
     public static Database database = new Database();
+    public static LogManager logManager = new LogManager();
 
     // variable for check if function found
     public static int inputFound;
@@ -35,6 +36,9 @@ public class Main {
         // init database system
         database.init();
 
+        // init log manager
+        logManager.init();
+
         // print spacer ///////////////////////////////////////////////////////
         console.printSpacer();
 
@@ -43,6 +47,9 @@ public class Main {
         
         // set starting date
         currentDate = TimeUtils.getDate();
+
+        // init log
+        logManager.systemLog("System initiated!");
 
         // init app core
         core.init();

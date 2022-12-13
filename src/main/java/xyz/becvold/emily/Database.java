@@ -19,8 +19,8 @@ public class Database {
     public FileUtils fileUtils = new FileUtils();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
-    public StringUtils stringUtils = new StringUtils();
 
+    // init database functions in start
     public void init() {
 
         // create data folder
@@ -49,8 +49,15 @@ public class Database {
             // check if data path created
             if (fileUtils.checkIfPathExist("data/")) {
                 consoleUtils.systemLog("Data folder created!");
+
+                // system log
+                Main.logManager.systemLog("data folder created");
+
             } else {
                 consoleUtils.systemLog("Error data folder create failed! - please check app and user permissions");
+
+                // error log
+                Main.logManager.errorLog("data folder create failed");
 
                 // kill app if data folder not created
                 systemUtils.appShutdown(0);
@@ -76,10 +83,16 @@ public class Database {
             if (!fileUtils.checkIfPathExist("data/database.json")) {
                 consoleUtils.systemLog("Error database file create failed! - please check app and user permissions");
 
+                // error log
+                Main.logManager.errorLog("database file create failed");
+
                 // kill app if data folder not created
                 systemUtils.appShutdown(0);
             } else {
                 consoleUtils.systemLog("Database file successfully created!");
+
+                // system log
+                Main.logManager.systemLog("database file successfully created");
             }
 
             // put default example data to database
@@ -110,10 +123,16 @@ public class Database {
             if (!fileUtils.checkIfPathExist("data/word-meaning-database.json")) {
                 consoleUtils.systemLog("Error Word-meaning-database file create failed! - please check app and user permissions");
 
+                // error log
+                Main.logManager.errorLog("word-meaning-database file create failed!");
+
                 // kill app if data folder not created
                 systemUtils.appShutdown(0);
             } else {
                 consoleUtils.systemLog("Word-meaning-database file successfully created!");
+
+                // system log
+                Main.logManager.systemLog("word-meaning-database file successfully created");
             }
 
             // put default example data to database
@@ -144,10 +163,16 @@ public class Database {
             if (!fileUtils.checkIfPathExist("data/memory.json")) {
                 consoleUtils.systemLog("Error memory file create failed! - please check app and user permissions");
 
+                // error log
+                Main.logManager.errorLog("memory file create failed");
+
                 // kill app if data folder not created
                 systemUtils.appShutdown(0);
             } else {
                 consoleUtils.systemLog("Memory file successfully created!");
+
+                // system log
+                Main.logManager.systemLog("memory file successfully created");
             }
 
             // put default example data to database

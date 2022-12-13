@@ -39,8 +39,15 @@ public class Test {
             // check if function is overused
             if (usages < maxUsagesCount) {
                 use(input);
+
+                // save input found log
+                Main.logManager.saveLog("Test (static response) used", "used-inputs.log");
+
             } else {
                 overused(input);
+
+                // save input found log
+                Main.logManager.saveLog("Test (static response) overused", "overused-inputs.log");
             }
 
             // set usages + 1

@@ -33,6 +33,9 @@ public class EmilyCore {
         // get user input
         String input = scanner.nextLine();
 
+        // save raw input
+        String inputRaw = input;
+
         // process reaction ///////////////////////////////////////////////////////////////////////
 
         // check if input not empty
@@ -56,7 +59,15 @@ public class EmilyCore {
                     // print response from database
                     console.emilyLog(database.getValueFromDatabaseFile(input, "database.json"));
 
+                    // save input found log
+                    Main.logManager.saveLog(inputRaw + " used and found in database", "used-inputs.log");
+
                 } else {
+
+                    // save not found input to log file
+                    Main.logManager.saveLog(inputRaw, "not-found-inputs.log");
+
+                    // print not found msg
                     console.emilyLog("Omlouvám se ale nerozuměla jsem vám :(");
                 }
             }
