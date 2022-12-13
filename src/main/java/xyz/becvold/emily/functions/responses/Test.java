@@ -41,13 +41,13 @@ public class Test {
                 use(input);
 
                 // save input found log
-                Main.logManager.saveLog("Test (static response) used", "used-inputs.log");
+                Main.logManager.saveLog(input + " (static response) used", "used-inputs.log");
 
             } else {
                 overused(input);
 
                 // save input found log
-                Main.logManager.saveLog("Test (static response) overused", "overused-inputs.log");
+                Main.logManager.saveLog(input + " (static response) overused", "overused-inputs.log");
             }
 
             // set usages + 1
