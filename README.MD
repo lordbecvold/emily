@@ -12,7 +12,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] CLI Chat system
 - [X] Input validation system
 - [X] Input recognition system
-- [ ] Responses to inputs in database.json (if not found static responses try search inputs in database file)
+- [X] Responses to inputs in database.json (if not found static responses try search inputs in database file)
 - [ ] Personality system (opinions, favorite color, game, music, etc. [in memory.json file])...
 - [ ] Log system (logs: not found inputs, found inputs, system actions, overused usages)
 - [ ] Self-preservation system (Anti-removal, shutdown)

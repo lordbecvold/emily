@@ -16,6 +16,7 @@ public class EmilyCore {
     public ConsoleUtils console = new ConsoleUtils();
     public Scanner scanner = new Scanner(System.in);
     public StringUtils stringUtils = new StringUtils();
+    public Database database = new Database();
 
     // instances of functions
     public Test test = new Test();
@@ -48,7 +49,16 @@ public class EmilyCore {
 
             // check if input found
             if (Main.inputFound == 0) {
-                console.emilyLog("Omlouvám se ale nerozuměla jsem vám :(");
+
+                // check if input found in database
+                if (database.isValueExistInDatabase(input, "database.json")) {
+
+                    // print response from database
+                    console.emilyLog(database.getValueFromDatabaseFile(input, "database.json"));
+
+                } else {
+                    console.emilyLog("Omlouvám se ale nerozuměla jsem vám :(");
+                }
             }
         }
         ///////////////////////////////////////////////////////////////////////////////////////////

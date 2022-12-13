@@ -1,10 +1,10 @@
 package xyz.becvold.emily;
 
-import xyz.becvold.emily.utils.ConsoleUtils;
-import xyz.becvold.emily.utils.FileUtils;
-import xyz.becvold.emily.utils.SystemUtils;
-import xyz.becvold.emily.utils.TimeUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import xyz.becvold.emily.utils.*;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,9 +16,10 @@ import java.io.PrintWriter;
 public class Database {
 
     // init objects
-    FileUtils fileUtils = new FileUtils();
-    ConsoleUtils consoleUtils = new ConsoleUtils();
-    SystemUtils systemUtils = new SystemUtils();
+    public FileUtils fileUtils = new FileUtils();
+    public ConsoleUtils consoleUtils = new ConsoleUtils();
+    public SystemUtils systemUtils = new SystemUtils();
+    public StringUtils stringUtils = new StringUtils();
 
     public void init() {
 
@@ -158,6 +159,34 @@ public class Database {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    // function for get database value
+    public String getValueFromDatabaseFile(String dbValue, String databaseFile) {
+        JSONParser parser = new JSONParser();
+        String value = null;
+        try {
+            Object object = null;
+            try {
+                object = parser.parse(new FileReader("data/" + databaseFile));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            JSONObject jsonObject = (JSONObject) object;
+            value = (String) jsonObject.get(dbValue);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return value;
+    }
+
+    // fuction for check if value exist in database
+    public boolean isValueExistInDatabase(String value, String database) {
+        if (getValueFromDatabaseFile(value, database) == null) {
+            return false;
+        } else {
+            return true;
         }
     }
 }
