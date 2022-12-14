@@ -178,6 +178,7 @@ public class Database {
             // put default example data to database
             try(PrintWriter output = new PrintWriter(new FileWriter("data/memory.json",true))) {
                 output.printf("{\n" +
+                        "  \"current-date\": \"" + "00.00.00"+ "\",\n" +
                         "  \"first-boot-date\": \"" + TimeUtils.getDate()+ "\",\n" +
                         "  \"first-boot-time\": \"" + TimeUtils.getTime("HH:mm:ss") + "\"\n" +
                         "}");
@@ -213,5 +214,36 @@ public class Database {
         } else {
             return true;
         }
+    }
+
+    // fuction for current time update in memory file
+    public void memoryCurrentTimeUpdate() {
+
+        // check if memory file exist
+        if (!fileUtils.checkIfPathExist("data/memory.json")) {
+            createMemoryFile();
+        }
+
+        // init new values
+        String newCurrentDate = TimeUtils.getDate();
+        String newFirstBootDate = getValueFromDatabaseFile("first-boot-date", "memory.json");
+        String newFirstBootTime = getValueFromDatabaseFile("first-boot-time", "memory.json");
+
+        // delete old memory file
+        fileUtils.deleteFile("data/memory.json");
+
+        // create new memory file with updated values
+        try(PrintWriter output = new PrintWriter(new FileWriter("data/memory.json",true))) {
+            output.printf("{\n" +
+                    "  \"current-date\": \"" + newCurrentDate + "\",\n" +
+                    "  \"first-boot-date\": \"" + newFirstBootDate + "\",\n" +
+                    "  \"first-boot-time\": \"" + newFirstBootTime + "\"\n" +
+                    "}");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // save system log
+        Main.logManager.systemLog("memory current time updated");
     }
 }

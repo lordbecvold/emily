@@ -42,9 +42,19 @@ public class ConsoleUtils {
         log(ANSI_WHITE + "====================================================================================");
     }
 
+    // print under line
+    public void printUnderLine() {
+        System.out.println("\n");
+    }
+
     // print prompt
     public void printPrompt() {
         System.out.print(ANSI_GREEN + "> " + ANSI_RESET);
+    }
+
+    // print prompt
+    public void printPromptRed() {
+        System.out.print(ANSI_RED + "> " + ANSI_RESET);
     }
 
     // print emily msg

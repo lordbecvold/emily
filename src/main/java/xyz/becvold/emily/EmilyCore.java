@@ -1,5 +1,6 @@
 package xyz.becvold.emily;
 
+import xyz.becvold.emily.functions.messages.RandomQuestions;
 import xyz.becvold.emily.functions.responses.*;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;

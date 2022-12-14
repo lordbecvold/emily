@@ -13,12 +13,9 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] Input validation system
 - [X] Input recognition system
 - [X] Responses to inputs in database.json (if not found static responses try search inputs in database file)
-- [ ] Personality system (opinions, favorite color, game, music, etc. [in memory.json file])...
 - [X] Log system (logs: not found inputs, found inputs, system actions, overused usages)
 - [X] Self-preservation system (Anti-removal, shutdown)
-- [ ] Unauthorized shutdown detection system (For non-developers) [Annoyance at the user]
-- [ ] Random question system (For example At night, ask if the user is tired)
-- [ ] Functions for controlling the computer (example: shutdown, update, file system clean and others)
+- [X] Random question system (For example At night, ask if the user is tired) [on start]
 - [ ] Voice system
 
 ## Static responses functions todo
@@ -37,6 +34,8 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [ ] Inventing scenarios and situations
 - [ ] Internet search asistent
 - [ ] Language recognition
+- [ ] Personality system (opinions, favorite color, game, music, etc. [in memory.json file])...
+- [ ] Functions for controlling the computer (example: shutdown, update, file system clean and others)
 - [ ] Learning system to add inputs to the file database
 
 ## Dependencies

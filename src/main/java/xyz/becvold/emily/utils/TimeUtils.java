@@ -24,6 +24,13 @@ public class TimeUtils {
         return dtf.format(now);
     }
 
+    // get actual date in string by custom format
+    public static String getDateWithCustomFormat(String format) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
+    }
+
     // get day name
     public static String getDayName() {
         Calendar cal = Calendar.getInstance();
