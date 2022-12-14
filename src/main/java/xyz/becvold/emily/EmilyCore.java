@@ -22,7 +22,10 @@ public class EmilyCore {
     public Test test = new Test();
 
     // core function
-    public void init() throws UnknownHostException {
+    public void init() {
+
+        // init self prevention system
+        Main.selfPrevention.init();
 
         // set default input found value
         Main.inputFound = 0;

@@ -39,16 +39,16 @@ public class LogManager {
 
             // check if data path created
             if (fileUtils.checkIfPathExist("data/logs/")) {
-                consoleUtils.systemLog("Logs folder created!");
+                consoleUtils.systemLog("(Log-manager): logs folder created!");
             } else {
-                consoleUtils.systemLog("Error data folder create failed! - please check app and user permissions");
+                consoleUtils.systemLog("(Log-manager): error data folder create failed! - please check app and user permissions");
 
                 // kill app if data folder not created
                 systemUtils.appShutdown(0);
             }
         } else {
 
-            consoleUtils.systemLog("Logs folder successfully found.");
+            consoleUtils.systemLog("(Log-manager): logs folder successfully found.");
         }
     }
 
@@ -90,6 +90,11 @@ public class LogManager {
     // save error log
     public void errorLog(String log) {
         saveLog(log, "error.log");
+    }
+
+    // save self prevent
+    public void selfPrevntSystem(String log) {
+        saveLog(log, "self-prevent.log");
     }
 
     // Delete all logs

@@ -15,4 +15,14 @@ public class SystemUtils {
     public String getOS() {
         return System.getProperty("os.name");
     }
+
+    // check if app running in intelliJ
+    public boolean isIntelliJRunning() {
+        String classPath = System.getProperty("java.class.path");
+        if (classPath.contains("idea_rt")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

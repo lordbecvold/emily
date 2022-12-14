@@ -17,6 +17,7 @@ public class Main {
     public static WelcomeMessage welcomeMessage = new WelcomeMessage();
     public static Database database = new Database();
     public static LogManager logManager = new LogManager();
+    public static SelfPrevention selfPrevention = new SelfPrevention();
 
     // variable for check if function found
     public static int inputFound;
@@ -38,6 +39,9 @@ public class Main {
 
         // init log manager
         logManager.init();
+
+        // init self prevention
+        selfPrevention.init();
 
         // print spacer ///////////////////////////////////////////////////////
         console.printSpacer();
