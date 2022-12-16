@@ -4,7 +4,6 @@ import xyz.becvold.emily.functions.messages.RandomQuestions;
 import xyz.becvold.emily.functions.messages.WelcomeMessage;
 import xyz.becvold.emily.utils.ConsoleUtils;
 import xyz.becvold.emily.utils.TimeUtils;
-import java.net.UnknownHostException;
 
 /**
  * @author Lukáš Bečvář on 17.11.22
@@ -28,7 +27,7 @@ public class Main {
     public static String currentDate;
     
     // main app initiate
-    public static void main(String[] args) throws UnknownHostException {
+    public static void main(String[] args) throws Exception {
 
         // print spacer ///////////////////////////////////////////////////////
         console.printSpacer();
