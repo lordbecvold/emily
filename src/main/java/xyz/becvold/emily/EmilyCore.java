@@ -1,10 +1,9 @@
 package xyz.becvold.emily;
 
-import xyz.becvold.emily.functions.messages.RandomQuestions;
 import xyz.becvold.emily.functions.responses.*;
 import xyz.becvold.emily.utils.StringUtils;
 import xyz.becvold.emily.utils.ConsoleUtils;
-import java.net.UnknownHostException;
+
 import java.util.Scanner;
 
 /**
@@ -20,7 +19,10 @@ public class EmilyCore {
     public Database database = new Database();
 
     // instances of functions
-    public Test test = new Test();
+    public GreetingResponse greetingResponse = new GreetingResponse();
+    public HowAreYouResponse howAreYouResponse = new HowAreYouResponse();
+    public TimeQuestionResponse timeQuestionResponse = new TimeQuestionResponse();
+    public WhatDayIsQuestionResponse whatDayIsQuestionResponse = new WhatDayIsQuestionResponse();
 
     // core function
     public void init() {
@@ -51,7 +53,10 @@ public class EmilyCore {
             input = stringUtils.validateInput(input);
 
             // RESPONSES FUNCTIONS LIST /////////////////////////////////////////////////
-            test.execute(input);
+            greetingResponse.execute(input);
+            howAreYouResponse.execute(input);
+            timeQuestionResponse.execute(input);
+            whatDayIsQuestionResponse.execute(input);
             /////////////////////////////////////////////////////////////////////////////
 
             // check if input found
