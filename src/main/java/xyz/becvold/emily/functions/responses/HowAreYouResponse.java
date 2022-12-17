@@ -2,6 +2,11 @@ package xyz.becvold.emily.functions.responses;
 
 import xyz.becvold.emily.Main;
 import xyz.becvold.emily.utils.*;
+import xyz.becvold.emily.utils.helpers.ArraysHelper;
+import xyz.becvold.emily.utils.helpers.IntegerHelper;
+import xyz.becvold.emily.utils.helpers.StringHelper;
+import xyz.becvold.emily.utils.helpers.TimeHelper;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -13,21 +18,21 @@ import java.util.Scanner;
 public class HowAreYouResponse {
 
     // usages count
-    public int usages = 0;
+    private int usages = 0;
 
     // init objects
-    public ConsoleUtils console = new ConsoleUtils();
-    public ArraysHelper arraysHelper = new ArraysHelper();
-    public StringUtils stringUtils = new StringUtils();
-    public IntUtils intUtils = new IntUtils();
-    public Scanner scanner = new Scanner(System.in);
+    private final ConsoleUtils console = new ConsoleUtils();
+    private final ArraysHelper arraysHelper = new ArraysHelper();
+    private final StringHelper stringUtils = new StringHelper();
+    private final IntegerHelper intUtils = new IntegerHelper();
+    private final Scanner scanner = new Scanner(System.in);
 
     // init function
     public void execute(String input) {
 
         // reset usages if is new day
-        if (!Main.currentDate.equals(TimeUtils.getDate())) {
-            Main.currentDate = TimeUtils.getDate();
+        if (!Main.currentDate.equals(TimeHelper.getDate())) {
+            Main.currentDate = TimeHelper.getDate();
             usages = 0;
             console.log("reset");
         }
@@ -61,7 +66,7 @@ public class HowAreYouResponse {
     }
 
     // MAIN FUNCTION SKELETON /////////////////////////////////////////////////////////////////////
-    public int maxUsagesCount = 15;
+    private final int maxUsagesCount = 15;
 
     // register inputs array (check if function used)
     List inputsList = Arrays.asList(
@@ -75,7 +80,7 @@ public class HowAreYouResponse {
             "how are you"
     );
 
-    public void use(String input) {
+    private void use(String input) {
 
         // print valid output
         if (input.contains(stringUtils.validateInput("jak se máš"))) {
@@ -144,7 +149,7 @@ public class HowAreYouResponse {
         }
     }
 
-    public void overused(String input) {
+    private void overused(String input) {
         if (input.contains(stringUtils.validateInput("how are you"))) {
             console.emilyLog("We already said that!");
         } else {

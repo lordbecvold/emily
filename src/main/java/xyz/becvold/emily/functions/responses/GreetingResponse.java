@@ -2,6 +2,11 @@ package xyz.becvold.emily.functions.responses;
 
 import xyz.becvold.emily.Main;
 import xyz.becvold.emily.utils.*;
+import xyz.becvold.emily.utils.helpers.ArraysHelper;
+import xyz.becvold.emily.utils.helpers.IntegerHelper;
+import xyz.becvold.emily.utils.helpers.StringHelper;
+import xyz.becvold.emily.utils.helpers.TimeHelper;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,20 +17,20 @@ import java.util.List;
 public class GreetingResponse {
 
     // usages count
-    public int usages = 0;
+    private int usages = 0;
 
     // init objects
-    public ConsoleUtils console = new ConsoleUtils();
-    public ArraysHelper arraysHelper = new ArraysHelper();
-    public StringUtils stringUtils = new StringUtils();
-    public IntUtils intUtils = new IntUtils();
+    private final ConsoleUtils console = new ConsoleUtils();
+    private final ArraysHelper arraysHelper = new ArraysHelper();
+    private final StringHelper stringUtils = new StringHelper();
+    private final IntegerHelper intUtils = new IntegerHelper();
 
     // init function
     public void execute(String input) {
 
         // reset usages if is new day
-        if (!Main.currentDate.equals(TimeUtils.getDate())) {
-            Main.currentDate = TimeUtils.getDate();
+        if (!Main.currentDate.equals(TimeHelper.getDate())) {
+            Main.currentDate = TimeHelper.getDate();
             usages = 0;
             console.log("reset");
         }
@@ -59,7 +64,7 @@ public class GreetingResponse {
     }
 
     // MAIN FUNCTION SKELETON /////////////////////////////////////////////////////////////////////
-    public int maxUsagesCount = 15;
+    private final int maxUsagesCount = 15;
 
     // register inputs array (check if function used)
     List inputsList = Arrays.asList(
@@ -95,52 +100,52 @@ public class GreetingResponse {
             "hallo"
     );
 
-    public void use(String input) {
+    private void use(String input) {
 
         if (input.contains(stringUtils.validateInput("dobrý den"))) {
-            if (!TimeUtils.isNightTime() || TimeUtils.isEveningTime()) {
+            if (!TimeHelper.isNightTime() || TimeHelper.isEveningTime()) {
                 console.emilyLog("Dobrý den, přeji.");
             } else {
                 console.emilyLog("Není den, ale dobrý i vám.");
             }
 
         } else if (input.contains(stringUtils.validateInput("dobrý večer"))) {
-            if (TimeUtils.isEveningTime()) {
+            if (TimeHelper.isEveningTime()) {
                 console.emilyLog("Dobrý večer i vám.");
             } else {
                 console.emilyLog("Není večer, ale dobrý i vám.");
             }
 
         } else if (input.contains(stringUtils.validateInput("dobré odpoledne"))) {
-            if (TimeUtils.isAafternoonTime()) {
+            if (TimeHelper.isAafternoonTime()) {
                 console.emilyLog("Dobré odpoledne i vám.");
             } else {
                 console.emilyLog("Není odpoledne, ale dobré i vám.");
             }
 
         } else if (input.contains(stringUtils.validateInput("dobré ráno"))) {
-            if (TimeUtils.isMorningTime()) {
+            if (TimeHelper.isMorningTime()) {
                 console.emilyLog("Dobré ráno i vám.");
             } else {
                 console.emilyLog("Jako není ráno, ale dobré i vám.");
             }
 
         } else if (input.contains(stringUtils.validateInput("dobrý podvečer"))) {
-            if (TimeUtils.isEarlyEveningTime()) {
+            if (TimeHelper.isEarlyEveningTime()) {
                 console.emilyLog("Dobrý podvečer i vám.");
             } else {
                 console.emilyLog("No... není sice podvečer, ale dobrý i vám.");
             }
 
         } else if (input.contains(stringUtils.validateInput("dobré poledne"))) {
-            if (TimeUtils.isNoonTime()) {
+            if (TimeHelper.isNoonTime()) {
                 console.emilyLog("Dobré poledne i vám.");
             } else {
                 console.emilyLog("No.. není sice poledne, ale dobré i vám.");
             }
 
         } else if (input.contains(stringUtils.validateInput("dobré dopoledne"))) {
-            if (TimeUtils.isAfterMorningTime()) {
+            if (TimeHelper.isAfterMorningTime()) {
                 console.emilyLog("Dobré dopoledne, přeji.");
             } else {
                 console.emilyLog("Sice není dopoledne, ale dobré i vám.");
@@ -177,7 +182,7 @@ public class GreetingResponse {
         }
     }
 
-    public void overused(String input) {
+    private void overused(String input) {
         if (input.contains("hello") || input.contains("hi")) {
             console.emilyLog("We will not repeat ourselves again!");
         } else if (input.contains("hallo") || input.contains(stringUtils.validateInput("guten tag"))) {

@@ -1,7 +1,7 @@
 package xyz.becvold.emily;
 
 import xyz.becvold.emily.functions.responses.*;
-import xyz.becvold.emily.utils.StringUtils;
+import xyz.becvold.emily.utils.helpers.StringHelper;
 import xyz.becvold.emily.utils.ConsoleUtils;
 
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class EmilyCore {
     // instances initiate
     public ConsoleUtils console = new ConsoleUtils();
     public Scanner scanner = new Scanner(System.in);
-    public StringUtils stringUtils = new StringUtils();
+    public StringHelper stringUtils = new StringHelper();
     public Database database = new Database();
 
     // instances of functions
@@ -23,6 +23,9 @@ public class EmilyCore {
     public HowAreYouResponse howAreYouResponse = new HowAreYouResponse();
     public TimeQuestionResponse timeQuestionResponse = new TimeQuestionResponse();
     public WhatDayIsQuestionResponse whatDayIsQuestionResponse = new WhatDayIsQuestionResponse();
+
+    // test module
+    public TestResponse testResponse = new TestResponse();
 
     // core function
     public void init() {
@@ -57,6 +60,9 @@ public class EmilyCore {
             howAreYouResponse.execute(input);
             timeQuestionResponse.execute(input);
             whatDayIsQuestionResponse.execute(input);
+
+            // test response
+            testResponse.execute(input);
             /////////////////////////////////////////////////////////////////////////////
 
             // check if input found

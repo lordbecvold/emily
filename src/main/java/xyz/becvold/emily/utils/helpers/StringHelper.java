@@ -1,4 +1,4 @@
-package xyz.becvold.emily.utils;
+package xyz.becvold.emily.utils.helpers;
 
 import java.text.Normalizer;
 
@@ -6,7 +6,7 @@ import java.text.Normalizer;
  * @author Lukáš Bečvář on 18.11.22
  * @project Emily
  */
-public class StringUtils {
+public class StringHelper {
 
     // remove special characters form string
     public String unaccent(String src) {

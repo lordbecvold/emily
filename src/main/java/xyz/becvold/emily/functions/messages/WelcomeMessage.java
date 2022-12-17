@@ -1,7 +1,7 @@
 package xyz.becvold.emily.functions.messages;
 
 import xyz.becvold.emily.utils.ConsoleUtils;
-import xyz.becvold.emily.utils.IntUtils;
+import xyz.becvold.emily.utils.helpers.IntegerHelper;
 import xyz.becvold.emily.utils.SystemUtils;
 
 /**
@@ -12,7 +12,7 @@ public class WelcomeMessage {
 
     // init instances
     public ConsoleUtils console = new ConsoleUtils();
-    public IntUtils intUtils = new IntUtils();
+    public IntegerHelper intUtils = new IntegerHelper();
     public SystemUtils systemUtils = new SystemUtils();
 
     // print welcome message

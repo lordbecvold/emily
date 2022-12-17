@@ -2,9 +2,12 @@ package xyz.becvold.emily.functions.responses;
 
 import xyz.becvold.emily.Main;
 import xyz.becvold.emily.utils.*;
+import xyz.becvold.emily.utils.helpers.ArraysHelper;
+import xyz.becvold.emily.utils.helpers.IntegerHelper;
+import xyz.becvold.emily.utils.helpers.StringHelper;
+import xyz.becvold.emily.utils.helpers.TimeHelper;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * @author Lukáš Bečvář on 25.11.22
@@ -16,17 +19,17 @@ public class TimeQuestionResponse {
     public int usages = 0;
 
     // init objects
-    public ConsoleUtils console = new ConsoleUtils();
-    public ArraysHelper arraysHelper = new ArraysHelper();
-    public StringUtils stringUtils = new StringUtils();
-    public IntUtils intUtils = new IntUtils();
+    private final ConsoleUtils console = new ConsoleUtils();
+    private final ArraysHelper arraysHelper = new ArraysHelper();
+    private final StringHelper stringUtils = new StringHelper();
+    private final IntegerHelper intUtils = new IntegerHelper();
 
     // init function
     public void execute(String input) {
 
         // reset usages if is new day
-        if (!Main.currentDate.equals(TimeUtils.getDate())) {
-            Main.currentDate = TimeUtils.getDate();
+        if (!Main.currentDate.equals(TimeHelper.getDate())) {
+            Main.currentDate = TimeHelper.getDate();
             usages = 0;
             console.log("reset");
         }
@@ -60,10 +63,10 @@ public class TimeQuestionResponse {
     }
 
     // MAIN FUNCTION SKELETON /////////////////////////////////////////////////////////////////////
-    public int maxUsagesCount = 15;
+    private final int maxUsagesCount = 15;
 
     // register inputs array (check if function used)
-    List inputsList = Arrays.asList(
+    private final List inputsList = Arrays.asList(
             "kolik je hodin",
             "kolik je",
             "kolik hodin",
@@ -87,35 +90,35 @@ public class TimeQuestionResponse {
             "what time"
     );
 
-    public void use(String input) {
+    private void use(String input) {
 
         // lang check
         if (input.contains(stringUtils.validateInput("what time"))) {
-            console.emilyLog("currently it is: " + TimeUtils.getTime("HH:mm"));
+            console.emilyLog("currently it is: " + TimeHelper.getTime("HH:mm"));
         } else {
 
             // get day part msg
-            if (TimeUtils.isEveningTime()) {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm") + ", je ráno.");
-            } else if (TimeUtils.isAfterMorningTime()) {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm") + ", je dopoledne.");
-            } else if (TimeUtils.isNoonTime()) {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm") + ", je poledne.");
-            } else if (TimeUtils.isAafternoonTime()) {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm") + ", je odpoldne.");
-            } else if (TimeUtils.isEarlyEveningTime()) {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm") + ", je podvčer.");
-            } else if (TimeUtils.isEveningTime()) {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm") + ", je večer.");
-            } else if (TimeUtils.isNightTime()) {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm") + ", je noc.");
+            if (TimeHelper.isEveningTime()) {
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm") + ", je ráno.");
+            } else if (TimeHelper.isAfterMorningTime()) {
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm") + ", je dopoledne.");
+            } else if (TimeHelper.isNoonTime()) {
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm") + ", je poledne.");
+            } else if (TimeHelper.isAafternoonTime()) {
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm") + ", je odpoldne.");
+            } else if (TimeHelper.isEarlyEveningTime()) {
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm") + ", je podvčer.");
+            } else if (TimeHelper.isEveningTime()) {
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm") + ", je večer.");
+            } else if (TimeHelper.isNightTime()) {
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm") + ", je noc.");
             } else {
-                console.emilyLog("Aktuálně je: " + TimeUtils.getTime("HH:mm"));
+                console.emilyLog("Aktuálně je: " + TimeHelper.getTime("HH:mm"));
             }
         }
     }
 
-    public void overused(String input) {
+    private void overused(String input) {
         if (input.contains(stringUtils.validateInput("what time"))) {
             console.emilyLog("I already told you this.");
         } else {

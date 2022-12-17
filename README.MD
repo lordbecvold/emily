@@ -3,43 +3,44 @@
 Emily is 'artificial intelligence' chatbot & smart asistent.
 
 ## Dev todo
-- [X] Create basic Structure
-- [X] Reset all function usages count at 00:00
-- [X] Create database structure
+- [X] Basic Structure
+- [X] Reset all responses usages count at 00:00
+- [X] Database structure
 - [X] Own database of basic phrases
 - [X] Phrases database (word-meaning explanation)
 - [X] Memory system (First boot time etc.)
 - [X] CLI Chat system
 - [X] Input validation system
 - [X] Input recognition system
-- [X] Responses to inputs in database.json (if not found static responses try search inputs in database file)
+- [X] Responses to inputs in database.json
 - [X] Log system (logs: not found inputs, found inputs, system actions, overused usages)
 - [X] Self-preservation system (Anti-removal, shutdown)
 - [X] Random question system (For example At night, ask if the user is tired) [on start]
 - [ ] Voice system
 
 ## Static responses functions todo
-- [ ] Where are you? response
-- [X] Time check (What time is it?) + write part of the day response
+- [X] Time check (What time is it?)
 - [X] What day it is? response
 - [ ] Who you are? response
 - [ ] Emergency shutdown system
 - [ ] Say function (say [msg to say]) response
-- [ ] help function (display emily's features) response
-- [ ] will AI take over the world?
-- [ ] who is your creator?
-- [ ] what does {phrase} mean (answer from phrase database = word-meaning-database.json)
-- [ ] how old are you and similar questions (answer from the memory system = memory.json)
+- [ ] Help function (display emily's features) response
+- [ ] Who is your creator?
+- [ ] What does {phrase} mean (answer from phrase database = word-meaning-database.json)
+- [ ] How old are you and similar questions (answer from the memory system = memory.json)
 - [ ] Calculator
-- [ ] Inventing scenarios and situations
-- [ ] Internet search asistent
+- [ ] Creating scenarios and situations
+- [ ] Internet search assistant
 - [ ] Language recognition
 - [ ] Personality system (opinions, favorite color, game, music, etc. [in memory.json file])...
-- [ ] Functions for controlling the computer (example: shutdown, update, file system clean and others)
-- [ ] Learning system to add inputs to the file database
+- [ ] Controlling computer (example: shutdown, update, file system clean, etc)
+- [ ] Learning system (inputs/responses database)
 
 ## Dependencies
 This project requires Java 17.
 * Junit
 	* Version: **4.11**
 	* [Website](https://junit.org/junit5/)
+* Json-Simple
+	* Version: **1.1.1**
+	* [Website](https://code.google.com/archive/p/json-simple/)

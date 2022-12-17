@@ -1,9 +1,8 @@
 package xyz.becvold.emily.functions.responses;
 
 import xyz.becvold.emily.Main;
-import xyz.becvold.emily.utils.*;
 import xyz.becvold.emily.utils.helpers.ArraysHelper;
-import xyz.becvold.emily.utils.helpers.StringHelper;
+import xyz.becvold.emily.utils.ConsoleUtils;
 import xyz.becvold.emily.utils.helpers.TimeHelper;
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
  * @author Lukáš Bečvář on 25.11.22
  * @project Emily
  */
-public class WhatDayIsQuestionResponse {
+public class TestResponse {
 
     // usages count
     private int usages = 0;
@@ -20,7 +19,6 @@ public class WhatDayIsQuestionResponse {
     // init objects
     private final ConsoleUtils console = new ConsoleUtils();
     private final ArraysHelper arraysHelper = new ArraysHelper();
-    private final StringHelper stringUtils = new StringHelper();
 
     // init function
     public void execute(String input) {
@@ -61,59 +59,21 @@ public class WhatDayIsQuestionResponse {
     }
 
     // MAIN FUNCTION SKELETON /////////////////////////////////////////////////////////////////////
-    private final int maxUsagesCount = 15;
+    private final int maxUsagesCount = 10;
 
     // register inputs array (check if function used)
-    private final List inputsList = Arrays.asList(
-            "co je za den",
-            "jaký je den",
-            "který je den",
-            "co je dnes",
-            "jakej je den",
-            "kterej je den",
-            "co za den",
-            "kterej den",
-            "který je den",
-            "jakej den",
-            "co je",
-            "what day"
+    List inputsList = Arrays.asList(
+            "test 1",
+            "test 2",
+            "test"
     );
 
     private void use(String input) {
-
-        if (input.contains(stringUtils.validateInput("what day"))) {
-            console.emilyLog("Today is: " + TimeHelper.getDayName() + ", " + TimeHelper.getDate());
-        } else {
-            console.emilyLog("Dnes je: " + translateDayName(TimeHelper.getDayName()) + ", " + TimeHelper.getDate());
-        }
+        console.emilyLog(input + " OK!");
     }
 
     private void overused(String input) {
-        if (input.contains(stringUtils.validateInput("what day"))) {
-            console.emilyLog("I already told you this.");
-        } else {
-            console.emilyLog("To už jsem ti řekla!");
-        }
+        console.emilyLog(input + " is overused!");
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
-    // translate day name
-    private String translateDayName(String dayName) {
-        if (dayName.equalsIgnoreCase("Sunday")) {
-            return "neděle";
-        } else if (dayName.equalsIgnoreCase("Monday")) {
-            return "pondělí";
-        } else if (dayName.equalsIgnoreCase("Tuesday")) {
-            return "úterý";
-        } else if (dayName.equalsIgnoreCase("Wednesday")) {
-            return "středa";
-        } else if (dayName.equalsIgnoreCase("Thursday")) {
-            return "čtvrtek";
-        } else if (dayName.equalsIgnoreCase("Friday")) {
-            return "pátek";
-        } else if (dayName.equalsIgnoreCase("Saturday")) {
-            return "sobota";
-        } else {
-            return "non";
-        }
-    }
 }

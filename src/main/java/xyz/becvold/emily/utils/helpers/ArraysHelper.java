@@ -1,4 +1,4 @@
-package xyz.becvold.emily.utils;
+package xyz.becvold.emily.utils.helpers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 public class ArraysHelper {
 
     // init objects
-    public StringUtils stringUtils = new StringUtils();
+    public StringHelper stringUtils = new StringHelper();
 
     // function for return list with validation for input recognition
     public List createFinalInputList(List inputList) {

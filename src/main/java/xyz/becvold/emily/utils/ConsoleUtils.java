@@ -8,24 +8,10 @@ public class ConsoleUtils {
 
     // msg color codes
     private String ANSI_RESET = "\u001B[0m";
-    private String ANSI_BLACK = "\u001B[30m";
     private String ANSI_RED = "\u001B[31m";
     private String ANSI_GREEN = "\u001B[32m";
     private String ANSI_YELLOW = "\u001B[33m";
-    private String ANSI_BLUE = "\u001B[34m";
-    private String ANSI_PURPLE = "\u001B[35m";
-    private String ANSI_CYAN = "\u001B[36m";
     private String ANSI_WHITE = "\u001B[37m";
-
-    // msg Background codes
-    private String ANSI_BLACK_BACKGROUND = "\u001B[40m";
-    private String ANSI_RED_BACKGROUND = "\u001B[41m";
-    private String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-    private String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-    private String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-    private String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
-    private String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-    private String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
     // log string to console with format reset
     public void log(String msg) {
@@ -42,8 +28,8 @@ public class ConsoleUtils {
         log(ANSI_WHITE + "====================================================================================");
     }
 
-    // print under line
-    public void printUnderLine() {
+    // print line break
+    public void printLineBreak() {
         System.out.println("\n");
     }
 

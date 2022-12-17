@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
-import xyz.becvold.emily.utils.ArraysHelper;
-import xyz.becvold.emily.utils.StringUtils;
+import xyz.becvold.emily.utils.helpers.ArraysHelper;
+import xyz.becvold.emily.utils.helpers.StringHelper;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class UtilsTest {
 
-    public StringUtils stringUtils = new StringUtils();
+    public StringHelper stringUtils = new StringHelper();
     public ArraysHelper arraysHelper = new ArraysHelper();
 
     @Test

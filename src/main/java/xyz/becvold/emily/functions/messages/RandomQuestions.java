@@ -2,7 +2,8 @@ package xyz.becvold.emily.functions.messages;
 
 import xyz.becvold.emily.Database;
 import xyz.becvold.emily.utils.*;
-
+import xyz.becvold.emily.utils.helpers.IntegerHelper;
+import xyz.becvold.emily.utils.helpers.TimeHelper;
 import java.util.Scanner;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Scanner;
 public class RandomQuestions {
 
     // init objects
-    public IntUtils intUtils = new IntUtils();
+    public IntegerHelper intUtils = new IntegerHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
     public Database database = new Database();
@@ -22,20 +23,20 @@ public class RandomQuestions {
     public void getRandomQuestion() {
 
         // check if date in memory is current (for one question per day [first startup])
-        if (database.getValueFromDatabaseFile("current-date", "memory.json").equals(TimeUtils.getDate())) {
+        if (database.getValueFromDatabaseFile("current-date", "memory.json").equals(TimeHelper.getDate())) {
             return;
         }
 
         // print console line break
-        consoleUtils.printUnderLine();
+        consoleUtils.printLineBreak();
 
         // generate random num for select question
         int questionNum = intUtils.randomInt(0, 4);
 
         // check if day is christmas
-        if (TimeUtils.getDateWithCustomFormat("dd:MM").equals("24.12")) {
+        if (TimeHelper.getDateWithCustomFormat("dd:MM").equals("24.12")) {
             consoleUtils.emilyLog("Přeji vám veselé vánoce! Mohu se zeptat co dnes plánujete?");
-        } else if (TimeUtils.getDateWithCustomFormat("dd:MM").equals("31.12") || TimeUtils.getDateWithCustomFormat("dd:MM").equals("01.01")) {
+        } else if (TimeHelper.getDateWithCustomFormat("dd:MM").equals("31.12") || TimeHelper.getDateWithCustomFormat("dd:MM").equals("01.01")) {
             consoleUtils.emilyLog("Přeji vám štastný nový rok! Mohu se zeptat co dnes plánujete?");
         }
 
@@ -45,18 +46,18 @@ public class RandomQuestions {
             if (questionNum == 0) {
 
                 // print msg by day name
-                if (TimeUtils.getDayName().equals("Sunday")) {
+                if (TimeHelper.getDayName().equals("Sunday")) {
                     consoleUtils.emilyLog("Pracuješ v neděli?");
-                } else if (TimeUtils.getDayName().equals("Saturday") && (TimeUtils.getTime("HH").equals("22") || TimeUtils.getTime("HH").equals("23") || TimeUtils.getTime("HH").equals("21")) || TimeUtils.getTime("HH").equals("21")) {
+                } else if (TimeHelper.getDayName().equals("Saturday") && (TimeHelper.getTime("HH").equals("22") || TimeHelper.getTime("HH").equals("23") || TimeHelper.getTime("HH").equals("21")) || TimeHelper.getTime("HH").equals("21")) {
                     consoleUtils.emilyLog("Už je skoro neděle, budete pracovat v neděli, nebo si uděláte volno?");
-                } else if (TimeUtils.getDayName().equals("Saturday")) {
+                } else if (TimeHelper.getDayName().equals("Saturday")) {
                     consoleUtils.emilyLog("Jaké máte plány na sobotu?");
-                } else if (TimeUtils.getDayName().equals("Monday")) {
+                } else if (TimeHelper.getDayName().equals("Monday")) {
 
                     // print msg by day time
-                    if (TimeUtils.isMorningTime()) {
+                    if (TimeHelper.isMorningTime()) {
                         consoleUtils.emilyLog("Přeji vám příjemné pondělní ráno!");
-                    } else if (TimeUtils.isEveningTime()) {
+                    } else if (TimeHelper.isEveningTime()) {
                         consoleUtils.emilyLog("Přeji vám příjemný pondělní večer!");
                     } else {
                         consoleUtils.emilyLog("Přeji vám příjemné pondělí!");
@@ -68,9 +69,9 @@ public class RandomQuestions {
             } else if (questionNum == 1) {
 
                 // print question by day time
-                if (TimeUtils.isMorningTime()) {
+                if (TimeHelper.isMorningTime()) {
                     consoleUtils.emilyLog("Přeji vám dobré ráno.");
-                } else if (TimeUtils.isNightTime()) {
+                } else if (TimeHelper.isNightTime()) {
                     consoleUtils.emilyLog("Nejste unavený tak pozdě v noci?");
                 }
 
@@ -95,7 +96,7 @@ public class RandomQuestions {
         }
 
         // get response from user
-        if (!(questionNum == 0 && TimeUtils.getDayName().equals("Monday")) && !(questionNum == 1 || TimeUtils.isMorningTime())) {
+        if (!(questionNum == 0 && TimeHelper.getDayName().equals("Monday")) && !(questionNum == 1 || TimeHelper.isMorningTime())) {
             consoleUtils.printPromptRed();
             scanner.nextLine();
             consoleUtils.emilyLog("OK, :)");

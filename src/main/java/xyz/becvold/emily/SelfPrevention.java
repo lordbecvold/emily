@@ -1,8 +1,8 @@
 package xyz.becvold.emily;
 
 import xyz.becvold.emily.utils.ConsoleUtils;
-import xyz.becvold.emily.utils.FileUtils;
-import xyz.becvold.emily.utils.ResourcesUtils;
+import xyz.becvold.emily.utils.helpers.FileHelper;
+import xyz.becvold.emily.utils.helpers.ResourcesHelper;
 import xyz.becvold.emily.utils.SystemUtils;
 
 /**
@@ -12,8 +12,8 @@ import xyz.becvold.emily.utils.SystemUtils;
 public class SelfPrevention {
 
     // init objects
-    public ResourcesUtils resourcesUtils = new ResourcesUtils();
-    public FileUtils fileUtils = new FileUtils();
+    public ResourcesHelper resourcesUtils = new ResourcesHelper();
+    public FileHelper fileUtils = new FileHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public LogManager logManager = new LogManager();
     public SystemUtils systemUtils = new SystemUtils();

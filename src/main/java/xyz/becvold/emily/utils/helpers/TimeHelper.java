@@ -1,4 +1,4 @@
-package xyz.becvold.emily.utils;
+package xyz.becvold.emily.utils.helpers;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -8,7 +8,7 @@ import java.util.Calendar;
  * @author Lukáš Bečvář on 18.11.22
  * @project Emily
  */
-public class TimeUtils {
+public class TimeHelper {
 
     // get actual time in string by format
     public static String getTime(String format) {

@@ -1,4 +1,4 @@
-package xyz.becvold.emily.utils;
+package xyz.becvold.emily.utils.helpers;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,7 +10,7 @@ import java.nio.file.StandardCopyOption;
  * @author Lukáš Bečvář on 14.12.22
  * @project Emily
  */
-public class ResourcesUtils {
+public class ResourcesHelper {
 
     public void copyResource(InputStream source , String destination) {
 

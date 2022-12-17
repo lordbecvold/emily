@@ -3,7 +3,7 @@ package xyz.becvold.emily;
 import xyz.becvold.emily.functions.messages.RandomQuestions;
 import xyz.becvold.emily.functions.messages.WelcomeMessage;
 import xyz.becvold.emily.utils.ConsoleUtils;
-import xyz.becvold.emily.utils.TimeUtils;
+import xyz.becvold.emily.utils.helpers.TimeHelper;
 
 /**
  * @author Lukáš Bečvář on 17.11.22
@@ -54,7 +54,7 @@ public class Main {
         randomQuestions.getRandomQuestion();
 
         // set starting date
-        currentDate = TimeUtils.getDate();
+        currentDate = TimeHelper.getDate();
 
         // init log
         logManager.systemLog("System initiated!");

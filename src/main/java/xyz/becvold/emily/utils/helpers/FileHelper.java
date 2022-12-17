@@ -1,4 +1,4 @@
-package xyz.becvold.emily.utils;
+package xyz.becvold.emily.utils.helpers;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.nio.file.Path;
  * @author Lukáš Bečvář on 09.12.22
  * @project Emily
  */
-public class FileUtils {
+public class FileHelper {
 
     // function for check if path exist
     public boolean checkIfPathExist(String filePath) {

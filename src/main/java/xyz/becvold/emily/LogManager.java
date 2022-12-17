@@ -1,9 +1,9 @@
 package xyz.becvold.emily;
 
 import xyz.becvold.emily.utils.ConsoleUtils;
-import xyz.becvold.emily.utils.FileUtils;
+import xyz.becvold.emily.utils.helpers.FileHelper;
 import xyz.becvold.emily.utils.SystemUtils;
-import xyz.becvold.emily.utils.TimeUtils;
+import xyz.becvold.emily.utils.helpers.TimeHelper;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 public class LogManager {
 
     // init objects
-    public FileUtils fileUtils = new FileUtils();
+    public FileHelper fileUtils = new FileHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
 
@@ -66,7 +66,7 @@ public class LogManager {
         }
 
         // get time
-        String time = TimeUtils.getTime("HH:mm:ss") + " - " + TimeUtils.getDate();
+        String time = TimeHelper.getTime("HH:mm:ss") + " - " + TimeHelper.getDate();
 
         // try save log to file
         try {

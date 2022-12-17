@@ -3,7 +3,8 @@ package xyz.becvold.emily;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import xyz.becvold.emily.utils.*;
-
+import xyz.becvold.emily.utils.helpers.FileHelper;
+import xyz.becvold.emily.utils.helpers.TimeHelper;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,7 +17,7 @@ import java.io.PrintWriter;
 public class Database {
 
     // init objects
-    public FileUtils fileUtils = new FileUtils();
+    public FileHelper fileUtils = new FileHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
 
@@ -179,8 +180,8 @@ public class Database {
             try(PrintWriter output = new PrintWriter(new FileWriter("data/memory.json",true))) {
                 output.printf("{\n" +
                         "  \"current-date\": \"" + "00.00.00"+ "\",\n" +
-                        "  \"first-boot-date\": \"" + TimeUtils.getDate()+ "\",\n" +
-                        "  \"first-boot-time\": \"" + TimeUtils.getTime("HH:mm:ss") + "\"\n" +
+                        "  \"first-boot-date\": \"" + TimeHelper.getDate()+ "\",\n" +
+                        "  \"first-boot-time\": \"" + TimeHelper.getTime("HH:mm:ss") + "\"\n" +
                         "}");
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -225,7 +226,7 @@ public class Database {
         }
 
         // init new values
-        String newCurrentDate = TimeUtils.getDate();
+        String newCurrentDate = TimeHelper.getDate();
         String newFirstBootDate = getValueFromDatabaseFile("first-boot-date", "memory.json");
         String newFirstBootTime = getValueFromDatabaseFile("first-boot-time", "memory.json");
 
