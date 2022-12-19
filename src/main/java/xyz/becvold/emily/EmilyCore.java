@@ -19,10 +19,11 @@ public class EmilyCore {
     public Database database = new Database();
 
     // instances of functions
-    public GreetingResponse greetingResponse = new GreetingResponse();
-    public HowAreYouResponse howAreYouResponse = new HowAreYouResponse();
-    public TimeQuestionResponse timeQuestionResponse = new TimeQuestionResponse();
-    public WhatDayIsQuestionResponse whatDayIsQuestionResponse = new WhatDayIsQuestionResponse();
+    private final GreetingResponse greetingResponse = new GreetingResponse();
+    private final HowAreYouResponse howAreYouResponse = new HowAreYouResponse();
+    private final TimeQuestionResponse timeQuestionResponse = new TimeQuestionResponse();
+    private final WhatDayIsQuestionResponse whatDayIsQuestionResponse = new WhatDayIsQuestionResponse();
+    private final WhoAreYouResponse whoAreYouResponse = new WhoAreYouResponse();
 
     // test module
     public TestResponse testResponse = new TestResponse();
@@ -60,6 +61,7 @@ public class EmilyCore {
             howAreYouResponse.execute(input);
             timeQuestionResponse.execute(input);
             whatDayIsQuestionResponse.execute(input);
+            whoAreYouResponse.execute(input);
 
             // test response
             testResponse.execute(input);

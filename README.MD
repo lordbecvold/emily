@@ -22,7 +22,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 ## Static responses functions todo
 - [X] Time check (What time is it?)
 - [X] What day it is? response
-- [ ] Who you are? response
+- [X] Who you are? response
 - [ ] Emergency shutdown system
 - [ ] Say function (say [msg to say]) response
 - [ ] Help function (display emily's features) response
