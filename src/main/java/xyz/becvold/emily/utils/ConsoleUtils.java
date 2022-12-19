@@ -1,10 +1,15 @@
 package xyz.becvold.emily.utils;
 
+import xyz.becvold.emily.LogManager;
+
 /**
  * @author Lukáš Bečvář on 17.11.22
  * @project Emily
  */
 public class ConsoleUtils {
+
+    // instances list
+    private final LogManager logManager = new LogManager();
 
     // msg color codes
     private String ANSI_RESET = "\u001B[0m";
@@ -21,6 +26,7 @@ public class ConsoleUtils {
     // log system msg
     public void systemLog(String msg) {
         System.out.println(ANSI_YELLOW + "[!] " + ANSI_RESET + msg);
+        logManager.systemLog(msg);
     }
 
     // print spacer

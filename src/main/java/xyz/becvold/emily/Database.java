@@ -50,15 +50,8 @@ public class Database {
             if (fileHelper.checkIfPathExist("data/")) {
                 consoleUtils.systemLog("(Database): data folder created!");
 
-                // system log
-                Main.logManager.systemLog("data folder created");
-
             } else {
                 consoleUtils.systemLog("(Database): error data folder create failed! - please check app and user permissions");
-
-                // error log
-                Main.logManager.errorLog("data folder create failed");
-
                 // kill app if data folder not created
                 systemUtils.appShutdown(0);
             }
@@ -90,9 +83,6 @@ public class Database {
                 systemUtils.appShutdown(0);
             } else {
                 consoleUtils.systemLog("(Database): database file successfully created!");
-
-                // system log
-                Main.logManager.systemLog("database file successfully created");
             }
         }
     }
@@ -119,9 +109,6 @@ public class Database {
                 systemUtils.appShutdown(0);
             } else {
                 consoleUtils.systemLog("(Database): memory file successfully created!");
-
-                // system log
-                Main.logManager.systemLog("memory file successfully created");
             }
         }
     }
@@ -180,8 +167,5 @@ public class Database {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        // save system log
-        Main.logManager.systemLog("memory current time updated");
     }
 }

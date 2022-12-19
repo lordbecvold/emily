@@ -4,7 +4,6 @@ import xyz.becvold.emily.functions.actions.EmergencyShutdown;
 import xyz.becvold.emily.functions.responses.*;
 import xyz.becvold.emily.utils.helpers.StringHelper;
 import xyz.becvold.emily.utils.ConsoleUtils;
-
 import java.util.Scanner;
 
 /**
