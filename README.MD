@@ -24,8 +24,6 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] Who you are? response
 - [X] Emergency shutdown system
 - [X] Who is your creator?
-- [ ] Internet search assistant
-- [ ] Controlling computer (example: shutdown, update, file system clean, etc)
 - [ ] Learning system (inputs/responses database)
 
 ## Dependencies
