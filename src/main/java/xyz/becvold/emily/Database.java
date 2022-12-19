@@ -34,9 +34,6 @@ public class Database {
 
         // create database file
         createDatabase();
-
-        // create phrases database
-        createWordDatabase();
     }
 
 
@@ -96,35 +93,6 @@ public class Database {
 
                 // system log
                 Main.logManager.systemLog("database file successfully created");
-            }
-        }
-    }
-
-    // function for create word-meaning database
-    public void createWordDatabase() {
-
-        // check if phrases database exist
-        if (fileHelper.checkIfPathExist("data/word-meaning-database.json")) {
-            consoleUtils.systemLog("(Database): word-meaning-database successfully found.");
-        } else {
-
-            // create phrases database file
-            resourcesHelper.copyResource(getClass().getClassLoader().getResourceAsStream("database/word-meaning-database.json"), "data/word-meaning-database.json");
-
-            // check if file created
-            if (!fileHelper.checkIfPathExist("data/word-meaning-database.json")) {
-                consoleUtils.systemLog("(Database): error Word-meaning-database file create failed! - please check app and user permissions");
-
-                // error log
-                Main.logManager.errorLog("word-meaning-database file create failed!");
-
-                // kill app if data folder not created
-                systemUtils.appShutdown(0);
-            } else {
-                consoleUtils.systemLog("(Database): word-meaning-database file successfully created!");
-
-                // system log
-                Main.logManager.systemLog("word-meaning-database file successfully created");
             }
         }
     }

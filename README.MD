@@ -7,7 +7,6 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] Reset all responses usages count at 00:00
 - [X] Database structure
 - [X] Own database of basic phrases
-- [X] Phrases database (word-meaning explanation)
 - [X] Memory system (First boot time etc.)
 - [X] CLI Chat system
 - [X] Input validation system
@@ -25,7 +24,6 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] Who you are? response
 - [X] Emergency shutdown system
 - [X] Who is your creator?
-- [ ] What does {phrase} mean (answer from phrase database = word-meaning-database.json)
 - [ ] Calculator
 - [ ] Internet search assistant
 - [ ] Controlling computer (example: shutdown, update, file system clean, etc)
