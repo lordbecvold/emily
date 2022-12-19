@@ -25,6 +25,7 @@ public class EmilyCore {
     private final TimeQuestionResponse timeQuestionResponse = new TimeQuestionResponse();
     private final WhatDayIsQuestionResponse whatDayIsQuestionResponse = new WhatDayIsQuestionResponse();
     private final WhoAreYouResponse whoAreYouResponse = new WhoAreYouResponse();
+    private final WhereAreYouResponse whereAreYouResponse = new WhereAreYouResponse();
 
     // instances of actions
     public final EmergencyShutdown emergencyShutdown = new EmergencyShutdown();
@@ -66,6 +67,7 @@ public class EmilyCore {
             timeQuestionResponse.execute(input);
             whatDayIsQuestionResponse.execute(input);
             whoAreYouResponse.execute(input);
+            whereAreYouResponse.execute(input);
 
             // action list
             emergencyShutdown.execute(input);
