@@ -4,6 +4,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import xyz.becvold.emily.utils.*;
 import xyz.becvold.emily.utils.helpers.FileHelper;
+import xyz.becvold.emily.utils.helpers.ResourcesHelper;
 import xyz.becvold.emily.utils.helpers.TimeHelper;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -20,6 +21,7 @@ public class Database {
     public FileHelper fileUtils = new FileHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
+    public ResourcesHelper resourcesUtils = new ResourcesHelper();
 
     // init database functions in start
     public void init() {
@@ -78,7 +80,7 @@ public class Database {
         } else {
 
             // create database file
-            fileUtils.createFile("data/database.json");
+            resourcesUtils.copyResource(getClass().getClassLoader().getResourceAsStream("database/database.json"), "data/database.json");
 
             // check if file created
             if (!fileUtils.checkIfPathExist("data/database.json")) {
@@ -95,17 +97,6 @@ public class Database {
                 // system log
                 Main.logManager.systemLog("database file successfully created");
             }
-
-            // put default example data to database
-            try(PrintWriter output = new PrintWriter(new FileWriter("data/database.json",true))) {
-                output.printf("{\n" +
-                        "  \"input\": \"output\",\n" +
-                        "  \"foo\": \"foo response\",\n" +
-                        "  \"cucu\": \"cucu reaction\"\n" +
-                        "}");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
@@ -118,7 +109,7 @@ public class Database {
         } else {
 
             // create phrases database file
-            fileUtils.createFile("data/word-meaning-database.json");
+            resourcesUtils.copyResource(getClass().getClassLoader().getResourceAsStream("database/word-meaning-database.json"), "data/word-meaning-database.json");
 
             // check if file created
             if (!fileUtils.checkIfPathExist("data/word-meaning-database.json")) {
@@ -135,17 +126,6 @@ public class Database {
                 // system log
                 Main.logManager.systemLog("word-meaning-database file successfully created");
             }
-
-            // put default example data to database
-            try(PrintWriter output = new PrintWriter(new FileWriter("data/word-meaning-database.json",true))) {
-                output.printf("{\n" +
-                        "  \"color\": \"Color is a perception that is created by visible light falling on the retina of the human eye\",\n" +
-                        "  \"airplane\": \"An airplane is a flying means of transport.\",\n" +
-                        "  \"carpets\": \"Carpets are textiles used to cover floors or walls\"\n" +
-                        "}");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
@@ -158,7 +138,7 @@ public class Database {
         } else {
 
             // create memory database file
-            fileUtils.createFile("data/memory.json");
+            resourcesUtils.copyResource(getClass().getClassLoader().getResourceAsStream("database/memory.json"), "data/memory.json");
 
             // check if file created
             if (!fileUtils.checkIfPathExist("data/memory.json")) {
@@ -174,17 +154,6 @@ public class Database {
 
                 // system log
                 Main.logManager.systemLog("memory file successfully created");
-            }
-
-            // put default example data to database
-            try(PrintWriter output = new PrintWriter(new FileWriter("data/memory.json",true))) {
-                output.printf("{\n" +
-                        "  \"current-date\": \"" + "00.00.00"+ "\",\n" +
-                        "  \"first-boot-date\": \"" + TimeHelper.getDate()+ "\",\n" +
-                        "  \"first-boot-time\": \"" + TimeHelper.getTime("HH:mm:ss") + "\"\n" +
-                        "}");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
         }
     }

@@ -16,7 +16,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] Log system (logs: not found inputs, found inputs, system actions, overused usages)
 - [X] Self-preservation system (Anti-removal, shutdown)
 - [X] Random question system (For example At night, ask if the user is tired) [on start]
-- [ ] Database jsons create source -> resources
+- [X] Database jsons create source -> resources
 - [ ] Voice system
 
 ## Static responses functions todo
