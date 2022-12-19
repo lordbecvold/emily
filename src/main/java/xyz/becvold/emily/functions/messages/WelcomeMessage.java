@@ -12,14 +12,14 @@ public class WelcomeMessage {
 
     // init instances
     public ConsoleUtils console = new ConsoleUtils();
-    public IntegerHelper intUtils = new IntegerHelper();
+    public IntegerHelper integerHelper = new IntegerHelper();
     public SystemUtils systemUtils = new SystemUtils();
 
     // print welcome message
     public void printWelcomeMessage() {
 
         // generate random number in range
-        int randomInt = intUtils.randomInt(0, 3);
+        int randomInt = integerHelper.randomInt(0, 3);
 
         if (randomInt == 0) {
             console.emilyLog("Ahoj, já jsem Emily, co pro tebe mohu udělat?");

@@ -27,7 +27,6 @@ public class TestResponse {
         if (!Main.currentDate.equals(TimeHelper.getDate())) {
             Main.currentDate = TimeHelper.getDate();
             usages = 0;
-            console.log("reset");
         }
 
         // create final input array

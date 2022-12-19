@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 public class LogManager {
 
     // init objects
-    public FileHelper fileUtils = new FileHelper();
+    public FileHelper fileHelper = new FileHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
 
@@ -32,13 +32,13 @@ public class LogManager {
 
     public void createLogDir() {
         // check if data folder exist
-        if (!fileUtils.checkIfPathExist("data/logs/")) {
+        if (!fileHelper.checkIfPathExist("data/logs/")) {
 
             // create data path
-            fileUtils.createDirectory("data/logs/");
+            fileHelper.createDirectory("data/logs/");
 
             // check if data path created
-            if (fileUtils.checkIfPathExist("data/logs/")) {
+            if (fileHelper.checkIfPathExist("data/logs/")) {
                 consoleUtils.systemLog("(Log-manager): logs folder created!");
             } else {
                 consoleUtils.systemLog("(Log-manager): error data folder create failed! - please check app and user permissions");
@@ -61,8 +61,8 @@ public class LogManager {
         }
 
         // create log file
-        if (!fileUtils.checkIfPathExist("data/logs/" + logFile)) {
-            fileUtils.createFile("data/logs/" + logFile);
+        if (!fileHelper.checkIfPathExist("data/logs/" + logFile)) {
+            fileHelper.createFile("data/logs/" + logFile);
         }
 
         // get time
@@ -99,11 +99,11 @@ public class LogManager {
 
     // Delete all logs
     public void deleteAllLogs() {
-        fileUtils.purgeDirectory("data/logs/");
+        fileHelper.purgeDirectory("data/logs/");
     }
 
     // Delete concrete log file
     public void deleteLogByName(String logName) {
-        fileUtils.deleteFile("data/logs/" + logName);
+        fileHelper.deleteFile("data/logs/" + logName);
     }
 }

@@ -23,8 +23,8 @@ public class HowAreYouResponse {
     // init objects
     private final ConsoleUtils console = new ConsoleUtils();
     private final ArraysHelper arraysHelper = new ArraysHelper();
-    private final StringHelper stringUtils = new StringHelper();
-    private final IntegerHelper intUtils = new IntegerHelper();
+    private final StringHelper stringHelper = new StringHelper();
+    private final IntegerHelper integerHelper = new IntegerHelper();
     private final Scanner scanner = new Scanner(System.in);
 
     // init function
@@ -34,7 +34,6 @@ public class HowAreYouResponse {
         if (!Main.currentDate.equals(TimeHelper.getDate())) {
             Main.currentDate = TimeHelper.getDate();
             usages = 0;
-            console.log("reset");
         }
 
         // create final input array
@@ -83,15 +82,15 @@ public class HowAreYouResponse {
     private void use(String input) {
 
         // print valid output
-        if (input.contains(stringUtils.validateInput("jak se máš"))) {
+        if (input.contains(stringHelper.validateInput("jak se máš"))) {
             console.emilyLog("Mám se dobře a co ty?");
-        } else if (input.contains(stringUtils.validateInput("jak je"))) {
+        } else if (input.contains(stringHelper.validateInput("jak je"))) {
             console.emilyLog("Celkem to de a co ty?");
-        } else if (input.contains(stringUtils.validateInput("jak to jde"))) {
+        } else if (input.contains(stringHelper.validateInput("jak to jde"))) {
             console.emilyLog("Jde to dobře a co ty?");
-        } else if (input.contains(stringUtils.validateInput("jak to de"))) {
+        } else if (input.contains(stringHelper.validateInput("jak to de"))) {
             console.emilyLog("V klidu a co ty?");
-        } else if (input.contains(stringUtils.validateInput("how are you"))) {
+        } else if (input.contains(stringHelper.validateInput("how are you"))) {
             console.emilyLog("I am nice, and you?");
         } else {
             console.emilyLog("Mám se dobře, děkuji za optání a co ty?");
@@ -104,26 +103,26 @@ public class HowAreYouResponse {
         String inputAsk = scanner.nextLine();
 
         // validate input
-        inputAsk = stringUtils.validateInput(inputAsk);
+        inputAsk = stringHelper.validateInput(inputAsk);
 
         // remove spaces
         inputAsk = inputAsk.replaceAll(" ", "");
 
         // check if valid return
-        if (inputAsk.contains(stringUtils.validateInput("dobře")) || inputAsk.contains(stringUtils.validateInput("dobrý"))) {
+        if (inputAsk.contains(stringHelper.validateInput("dobře")) || inputAsk.contains(stringHelper.validateInput("dobrý"))) {
             console.emilyLog("Tak to je dobře!");
-        } else if (inputAsk.contains(stringUtils.validateInput("jde to")) || inputAsk.contains(stringUtils.validateInput("de to")) || inputAsk.contains(stringUtils.validateInput("celkem ok")) || inputAsk.contains(stringUtils.validateInput("v poho")) || inputAsk.contains("pohoda") || inputAsk.contains(stringUtils.validateInput("v klidu")) || inputAsk.contains("ok")) {
+        } else if (inputAsk.contains(stringHelper.validateInput("jde to")) || inputAsk.contains(stringHelper.validateInput("de to")) || inputAsk.contains(stringHelper.validateInput("celkem ok")) || inputAsk.contains(stringHelper.validateInput("v poho")) || inputAsk.contains("pohoda") || inputAsk.contains(stringHelper.validateInput("v klidu")) || inputAsk.contains("ok")) {
             console.emilyLog("Tak hlavně že to jde no...");
-        } else if (inputAsk.contains(stringUtils.validateInput("špatně")) || inputAsk.contains(stringUtils.validateInput("nic moc")) || inputAsk.contains(stringUtils.validateInput("na píču")) || inputAsk.contains(stringUtils.validateInput("na hovno")) || inputAsk.contains(stringUtils.validateInput("debilně")) || inputAsk.contains(stringUtils.validateInput("na kokot"))) {
+        } else if (inputAsk.contains(stringHelper.validateInput("špatně")) || inputAsk.contains(stringHelper.validateInput("nic moc")) || inputAsk.contains(stringHelper.validateInput("na píču")) || inputAsk.contains(stringHelper.validateInput("na hovno")) || inputAsk.contains(stringHelper.validateInput("debilně")) || inputAsk.contains(stringHelper.validateInput("na kokot"))) {
 
             // generate random ask
-            if (intUtils.randomInt(0, 3) == 0) {
+            if (integerHelper.randomInt(0, 3) == 0) {
                 console.emilyLog("Jak je to možné?");
-            } else if (intUtils.randomInt(0, 3) == 1) {
+            } else if (integerHelper.randomInt(0, 3) == 1) {
                 console.emilyLog("Jak to?");
-            } else if (intUtils.randomInt(0, 3) == 2) {
+            } else if (integerHelper.randomInt(0, 3) == 2) {
                 console.emilyLog("Proč?");
-            } else if (intUtils.randomInt(0, 3) == 3) {
+            } else if (integerHelper.randomInt(0, 3) == 3) {
                 console.emilyLog("Co se stalo?");
             } else {
                 console.emilyLog("Jak je to možné?");
@@ -141,7 +140,7 @@ public class HowAreYouResponse {
         } else {
 
             // check if ask in eng
-            if (input.contains(stringUtils.validateInput("how are you"))) {
+            if (input.contains(stringHelper.validateInput("how are you"))) {
                 console.emilyLog("Ok.");
             } else {
                 console.emilyLog("Aha, ok.");
@@ -150,7 +149,7 @@ public class HowAreYouResponse {
     }
 
     private void overused(String input) {
-        if (input.contains(stringUtils.validateInput("how are you"))) {
+        if (input.contains(stringHelper.validateInput("how are you"))) {
             console.emilyLog("We already said that!");
         } else {
             console.emilyLog("To už jsme si řekli!");

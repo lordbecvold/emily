@@ -23,9 +23,7 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] Time check (What time is it?)
 - [X] What day it is? response
 - [X] Who you are? response
-- [ ] Emergency shutdown system
-- [ ] Say function (say [msg to say]) response
-- [ ] Help function (display emily's features) response
+- [X] Emergency shutdown system
 - [ ] Who is your creator?
 - [ ] What does {phrase} mean (answer from phrase database = word-meaning-database.json)
 - [ ] How old are you and similar questions (answer from the memory system = memory.json)

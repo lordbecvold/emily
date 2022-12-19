@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class RandomQuestions {
 
     // init objects
-    public IntegerHelper intUtils = new IntegerHelper();
+    public IntegerHelper integerHelper = new IntegerHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
     public Database database = new Database();
@@ -31,7 +31,7 @@ public class RandomQuestions {
         consoleUtils.printLineBreak();
 
         // generate random num for select question
-        int questionNum = intUtils.randomInt(0, 4);
+        int questionNum = integerHelper.randomInt(0, 4);
 
         // check if day is christmas
         if (TimeHelper.getDateWithCustomFormat("dd:MM").equals("24.12")) {

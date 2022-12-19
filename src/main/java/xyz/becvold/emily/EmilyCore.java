@@ -1,5 +1,6 @@
 package xyz.becvold.emily;
 
+import xyz.becvold.emily.functions.actions.EmergencyShutdown;
 import xyz.becvold.emily.functions.responses.*;
 import xyz.becvold.emily.utils.helpers.StringHelper;
 import xyz.becvold.emily.utils.ConsoleUtils;
@@ -15,7 +16,7 @@ public class EmilyCore {
     // instances initiate
     public ConsoleUtils console = new ConsoleUtils();
     public Scanner scanner = new Scanner(System.in);
-    public StringHelper stringUtils = new StringHelper();
+    public StringHelper stringHelper = new StringHelper();
     public Database database = new Database();
 
     // instances of functions
@@ -24,6 +25,9 @@ public class EmilyCore {
     private final TimeQuestionResponse timeQuestionResponse = new TimeQuestionResponse();
     private final WhatDayIsQuestionResponse whatDayIsQuestionResponse = new WhatDayIsQuestionResponse();
     private final WhoAreYouResponse whoAreYouResponse = new WhoAreYouResponse();
+
+    // instances of actions
+    public final EmergencyShutdown emergencyShutdown = new EmergencyShutdown();
 
     // test module
     public TestResponse testResponse = new TestResponse();
@@ -54,7 +58,7 @@ public class EmilyCore {
         } else {
 
             // validate input
-            input = stringUtils.validateInput(input);
+            input = stringHelper.validateInput(input);
 
             // RESPONSES FUNCTIONS LIST /////////////////////////////////////////////////
             greetingResponse.execute(input);
@@ -62,6 +66,9 @@ public class EmilyCore {
             timeQuestionResponse.execute(input);
             whatDayIsQuestionResponse.execute(input);
             whoAreYouResponse.execute(input);
+
+            // action list
+            emergencyShutdown.execute(input);
 
             // test response
             testResponse.execute(input);

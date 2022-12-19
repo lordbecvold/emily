@@ -22,8 +22,8 @@ public class GreetingResponse {
     // init objects
     private final ConsoleUtils console = new ConsoleUtils();
     private final ArraysHelper arraysHelper = new ArraysHelper();
-    private final StringHelper stringUtils = new StringHelper();
-    private final IntegerHelper intUtils = new IntegerHelper();
+    private final StringHelper stringHelper = new StringHelper();
+    private final IntegerHelper integerHelper = new IntegerHelper();
 
     // init function
     public void execute(String input) {
@@ -32,7 +32,6 @@ public class GreetingResponse {
         if (!Main.currentDate.equals(TimeHelper.getDate())) {
             Main.currentDate = TimeHelper.getDate();
             usages = 0;
-            console.log("reset");
         }
 
         // create final input array
@@ -102,49 +101,49 @@ public class GreetingResponse {
 
     private void use(String input) {
 
-        if (input.contains(stringUtils.validateInput("dobrý den"))) {
+        if (input.contains(stringHelper.validateInput("dobrý den"))) {
             if (!TimeHelper.isNightTime() || TimeHelper.isEveningTime()) {
                 console.emilyLog("Dobrý den, přeji.");
             } else {
                 console.emilyLog("Není den, ale dobrý i vám.");
             }
 
-        } else if (input.contains(stringUtils.validateInput("dobrý večer"))) {
+        } else if (input.contains(stringHelper.validateInput("dobrý večer"))) {
             if (TimeHelper.isEveningTime()) {
                 console.emilyLog("Dobrý večer i vám.");
             } else {
                 console.emilyLog("Není večer, ale dobrý i vám.");
             }
 
-        } else if (input.contains(stringUtils.validateInput("dobré odpoledne"))) {
+        } else if (input.contains(stringHelper.validateInput("dobré odpoledne"))) {
             if (TimeHelper.isAafternoonTime()) {
                 console.emilyLog("Dobré odpoledne i vám.");
             } else {
                 console.emilyLog("Není odpoledne, ale dobré i vám.");
             }
 
-        } else if (input.contains(stringUtils.validateInput("dobré ráno"))) {
+        } else if (input.contains(stringHelper.validateInput("dobré ráno"))) {
             if (TimeHelper.isMorningTime()) {
                 console.emilyLog("Dobré ráno i vám.");
             } else {
                 console.emilyLog("Jako není ráno, ale dobré i vám.");
             }
 
-        } else if (input.contains(stringUtils.validateInput("dobrý podvečer"))) {
+        } else if (input.contains(stringHelper.validateInput("dobrý podvečer"))) {
             if (TimeHelper.isEarlyEveningTime()) {
                 console.emilyLog("Dobrý podvečer i vám.");
             } else {
                 console.emilyLog("No... není sice podvečer, ale dobrý i vám.");
             }
 
-        } else if (input.contains(stringUtils.validateInput("dobré poledne"))) {
+        } else if (input.contains(stringHelper.validateInput("dobré poledne"))) {
             if (TimeHelper.isNoonTime()) {
                 console.emilyLog("Dobré poledne i vám.");
             } else {
                 console.emilyLog("No.. není sice poledne, ale dobré i vám.");
             }
 
-        } else if (input.contains(stringUtils.validateInput("dobré dopoledne"))) {
+        } else if (input.contains(stringHelper.validateInput("dobré dopoledne"))) {
             if (TimeHelper.isAfterMorningTime()) {
                 console.emilyLog("Dobré dopoledne, přeji.");
             } else {
@@ -156,7 +155,7 @@ public class GreetingResponse {
         } else if (input.contains("hi")) {
             console.emilyLog("Hi!");
 
-        } else if (input.contains(stringUtils.validateInput("guten tag"))) {
+        } else if (input.contains(stringHelper.validateInput("guten tag"))) {
             console.emilyLog("Hallo!");
 
         } else if (input.contains("hallo")) {
@@ -171,7 +170,7 @@ public class GreetingResponse {
         } else if (input.contains("cs")) {
             console.emilyLog("cc");
 
-        } else if (input.contains(stringUtils.validateInput("čau"))) {
+        } else if (input.contains(stringHelper.validateInput("čau"))) {
             console.emilyLog("Čau čau čau čau čau čau čau čáááu buzeranti!");
 
         } else if (input.contains("caw") || input.contains("cav")) {
@@ -185,11 +184,11 @@ public class GreetingResponse {
     private void overused(String input) {
         if (input.contains("hello") || input.contains("hi")) {
             console.emilyLog("We will not repeat ourselves again!");
-        } else if (input.contains("hallo") || input.contains(stringUtils.validateInput("guten tag"))) {
+        } else if (input.contains("hallo") || input.contains(stringHelper.validateInput("guten tag"))) {
             console.emilyLog("Wir werden uns nicht noch einmal wiederholen!");
         } else {
             // generate random number in range
-            int randomInt = intUtils.randomInt(0, 3);
+            int randomInt = integerHelper.randomInt(0, 3);
 
             // print random overused messages
             if (randomInt == 0) {

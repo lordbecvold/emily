@@ -10,7 +10,7 @@ import java.util.List;
 public class ArraysHelper {
 
     // init objects
-    public StringHelper stringUtils = new StringHelper();
+    public StringHelper stringHelper = new StringHelper();
 
     // function for return list with validation for input recognition
     public List createFinalInputList(List inputList) {
@@ -20,7 +20,7 @@ public class ArraysHelper {
 
         // validate input & add to list
         for (Object element:inputList) {
-            list.add(stringUtils.validateInput(element.toString()));
+            list.add(stringHelper.validateInput(element.toString()));
         }
 
         // return final list

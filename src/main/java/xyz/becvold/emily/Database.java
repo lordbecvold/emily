@@ -18,10 +18,10 @@ import java.io.PrintWriter;
 public class Database {
 
     // init objects
-    public FileHelper fileUtils = new FileHelper();
+    public FileHelper fileHelper = new FileHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public SystemUtils systemUtils = new SystemUtils();
-    public ResourcesHelper resourcesUtils = new ResourcesHelper();
+    public ResourcesHelper resourcesHelper = new ResourcesHelper();
 
     // init database functions in start
     public void init() {
@@ -44,13 +44,13 @@ public class Database {
     public void createDataFolder() {
 
         // check if data folder exist
-        if (!fileUtils.checkIfPathExist("data/")) {
+        if (!fileHelper.checkIfPathExist("data/")) {
 
             // create data path
-            fileUtils.createDirectory("data/");
+            fileHelper.createDirectory("data/");
 
             // check if data path created
-            if (fileUtils.checkIfPathExist("data/")) {
+            if (fileHelper.checkIfPathExist("data/")) {
                 consoleUtils.systemLog("(Database): data folder created!");
 
                 // system log
@@ -75,15 +75,15 @@ public class Database {
     public void createDatabase() {
 
         // check if database exist
-        if (fileUtils.checkIfPathExist("data/database.json")) {
+        if (fileHelper.checkIfPathExist("data/database.json")) {
             consoleUtils.systemLog("(Database): database successfully found.");
         } else {
 
             // create database file
-            resourcesUtils.copyResource(getClass().getClassLoader().getResourceAsStream("database/database.json"), "data/database.json");
+            resourcesHelper.copyResource(getClass().getClassLoader().getResourceAsStream("database/database.json"), "data/database.json");
 
             // check if file created
-            if (!fileUtils.checkIfPathExist("data/database.json")) {
+            if (!fileHelper.checkIfPathExist("data/database.json")) {
                 consoleUtils.systemLog("(Database): error database file create failed! - please check app and user permissions");
 
                 // error log
@@ -104,15 +104,15 @@ public class Database {
     public void createWordDatabase() {
 
         // check if phrases database exist
-        if (fileUtils.checkIfPathExist("data/word-meaning-database.json")) {
+        if (fileHelper.checkIfPathExist("data/word-meaning-database.json")) {
             consoleUtils.systemLog("(Database): word-meaning-database successfully found.");
         } else {
 
             // create phrases database file
-            resourcesUtils.copyResource(getClass().getClassLoader().getResourceAsStream("database/word-meaning-database.json"), "data/word-meaning-database.json");
+            resourcesHelper.copyResource(getClass().getClassLoader().getResourceAsStream("database/word-meaning-database.json"), "data/word-meaning-database.json");
 
             // check if file created
-            if (!fileUtils.checkIfPathExist("data/word-meaning-database.json")) {
+            if (!fileHelper.checkIfPathExist("data/word-meaning-database.json")) {
                 consoleUtils.systemLog("(Database): error Word-meaning-database file create failed! - please check app and user permissions");
 
                 // error log
@@ -133,15 +133,15 @@ public class Database {
     public void createMemoryFile() {
 
         // check if memory database exist
-        if (fileUtils.checkIfPathExist("data/memory.json")) {
+        if (fileHelper.checkIfPathExist("data/memory.json")) {
             consoleUtils.systemLog("(Database): memory file successfully found.");
         } else {
 
             // create memory database file
-            resourcesUtils.copyResource(getClass().getClassLoader().getResourceAsStream("database/memory.json"), "data/memory.json");
+            resourcesHelper.copyResource(getClass().getClassLoader().getResourceAsStream("database/memory.json"), "data/memory.json");
 
             // check if file created
-            if (!fileUtils.checkIfPathExist("data/memory.json")) {
+            if (!fileHelper.checkIfPathExist("data/memory.json")) {
                 consoleUtils.systemLog("(Database): error memory file create failed! - please check app and user permissions");
 
                 // error log
@@ -190,7 +190,7 @@ public class Database {
     public void memoryCurrentTimeUpdate() {
 
         // check if memory file exist
-        if (!fileUtils.checkIfPathExist("data/memory.json")) {
+        if (!fileHelper.checkIfPathExist("data/memory.json")) {
             createMemoryFile();
         }
 
@@ -200,7 +200,7 @@ public class Database {
         String newFirstBootTime = getValueFromDatabaseFile("first-boot-time", "memory.json");
 
         // delete old memory file
-        fileUtils.deleteFile("data/memory.json");
+        fileHelper.deleteFile("data/memory.json");
 
         // create new memory file with updated values
         try(PrintWriter output = new PrintWriter(new FileWriter("data/memory.json",true))) {

@@ -20,7 +20,7 @@ public class WhatDayIsQuestionResponse {
     // init objects
     private final ConsoleUtils console = new ConsoleUtils();
     private final ArraysHelper arraysHelper = new ArraysHelper();
-    private final StringHelper stringUtils = new StringHelper();
+    private final StringHelper stringHelper = new StringHelper();
 
     // init function
     public void execute(String input) {
@@ -29,7 +29,6 @@ public class WhatDayIsQuestionResponse {
         if (!Main.currentDate.equals(TimeHelper.getDate())) {
             Main.currentDate = TimeHelper.getDate();
             usages = 0;
-            console.log("reset");
         }
 
         // create final input array
@@ -81,7 +80,7 @@ public class WhatDayIsQuestionResponse {
 
     private void use(String input) {
 
-        if (input.contains(stringUtils.validateInput("what day"))) {
+        if (input.contains(stringHelper.validateInput("what day"))) {
             console.emilyLog("Today is: " + TimeHelper.getDayName() + ", " + TimeHelper.getDate());
         } else {
             console.emilyLog("Dnes je: " + translateDayName(TimeHelper.getDayName()) + ", " + TimeHelper.getDate());
@@ -89,7 +88,7 @@ public class WhatDayIsQuestionResponse {
     }
 
     private void overused(String input) {
-        if (input.contains(stringUtils.validateInput("what day"))) {
+        if (input.contains(stringHelper.validateInput("what day"))) {
             console.emilyLog("I already told you this.");
         } else {
             console.emilyLog("To už jsem ti řekla!");

@@ -12,8 +12,8 @@ import java.nio.file.StandardCopyOption;
  */
 public class ResourcesHelper {
 
+    // function for copy resource to working directory
     public void copyResource(InputStream source , String destination) {
-
         try {
             Files.copy(source, Paths.get(destination), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {

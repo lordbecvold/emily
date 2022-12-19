@@ -21,8 +21,8 @@ public class TimeQuestionResponse {
     // init objects
     private final ConsoleUtils console = new ConsoleUtils();
     private final ArraysHelper arraysHelper = new ArraysHelper();
-    private final StringHelper stringUtils = new StringHelper();
-    private final IntegerHelper intUtils = new IntegerHelper();
+    private final StringHelper stringHelper = new StringHelper();
+    private final IntegerHelper integerHelper = new IntegerHelper();
 
     // init function
     public void execute(String input) {
@@ -31,7 +31,6 @@ public class TimeQuestionResponse {
         if (!Main.currentDate.equals(TimeHelper.getDate())) {
             Main.currentDate = TimeHelper.getDate();
             usages = 0;
-            console.log("reset");
         }
 
         // create final input array
@@ -93,7 +92,7 @@ public class TimeQuestionResponse {
     private void use(String input) {
 
         // lang check
-        if (input.contains(stringUtils.validateInput("what time"))) {
+        if (input.contains(stringHelper.validateInput("what time"))) {
             console.emilyLog("currently it is: " + TimeHelper.getTime("HH:mm"));
         } else {
 
@@ -119,12 +118,12 @@ public class TimeQuestionResponse {
     }
 
     private void overused(String input) {
-        if (input.contains(stringUtils.validateInput("what time"))) {
+        if (input.contains(stringHelper.validateInput("what time"))) {
             console.emilyLog("I already told you this.");
         } else {
 
             // get random number in range
-            int random = intUtils.randomInt(0, 3);
+            int random = integerHelper.randomInt(0, 3);
 
             // return random msg
             if (random == 0) {

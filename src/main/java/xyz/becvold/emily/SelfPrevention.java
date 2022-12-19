@@ -12,8 +12,8 @@ import xyz.becvold.emily.utils.SystemUtils;
 public class SelfPrevention {
 
     // init objects
-    public ResourcesHelper resourcesUtils = new ResourcesHelper();
-    public FileHelper fileUtils = new FileHelper();
+    public ResourcesHelper resourcesHelper = new ResourcesHelper();
+    public FileHelper fileHelper = new FileHelper();
     public ConsoleUtils consoleUtils = new ConsoleUtils();
     public LogManager logManager = new LogManager();
     public SystemUtils systemUtils = new SystemUtils();
@@ -27,10 +27,10 @@ public class SelfPrevention {
         }
 
         // check if emily jar exist
-        if (!fileUtils.checkIfPathExist("Emily.jar")) {
+        if (!fileHelper.checkIfPathExist("Emily.jar")) {
 
             // try copy jar file from resources
-            resourcesUtils.copyResource(getClass().getClassLoader().getResourceAsStream("EmilyBin.jar"), "Emily.jar");
+            resourcesHelper.copyResource(getClass().getClassLoader().getResourceAsStream("EmilyBin.jar"), "Emily.jar");
 
             // print msg
             consoleUtils.systemLog("(Self-Protection): jar file deleted detected, creating new...");
@@ -39,7 +39,7 @@ public class SelfPrevention {
             logManager.selfPrevntSystem("jar file deleted detected, creating new...");
 
             // check if path exist (create check)
-            if (fileUtils.checkIfPathExist("Emily.jar")) {
+            if (fileHelper.checkIfPathExist("Emily.jar")) {
 
                 // print msg
                 consoleUtils.systemLog("(Self-Protection): jar file created");
