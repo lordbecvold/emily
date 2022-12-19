@@ -24,14 +24,10 @@ Emily is 'artificial intelligence' chatbot & smart asistent.
 - [X] What day it is? response
 - [X] Who you are? response
 - [X] Emergency shutdown system
-- [ ] Who is your creator?
+- [X] Who is your creator?
 - [ ] What does {phrase} mean (answer from phrase database = word-meaning-database.json)
-- [ ] How old are you and similar questions (answer from the memory system = memory.json)
 - [ ] Calculator
-- [ ] Creating scenarios and situations
 - [ ] Internet search assistant
-- [ ] Language recognition
-- [ ] Personality system (opinions, favorite color, game, music, etc. [in memory.json file])...
 - [ ] Controlling computer (example: shutdown, update, file system clean, etc)
 - [ ] Learning system (inputs/responses database)
 
